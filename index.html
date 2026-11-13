@@ -87,6 +87,16 @@
     .predictive .art-number { font-size: 30px; letter-spacing: -.055em; }
     .predictive .art-caption { max-width: 260px; }
 
+    .sexual-violence { background: #f5edf0; }
+    .sexual-violence .report-art { background: #8a3f53; background-image: linear-gradient(135deg, rgba(255,255,255,.10), transparent 68%); }
+    .sexual-violence .report-art::before { border-color: rgba(255, 237, 242, .27); width: 200px; height: 200px; top: -12px; right: -52px; }
+    .sexual-violence .report-art::after { border-color: rgba(255, 237, 242, .22); width: 135px; height: 135px; top: 22px; right: -10px; }
+    .sexual-violence .featured-label { color: #6f2e44; }
+    .sexual-violence .report-description { color: #664a57; }
+    .sexual-violence .tag { border-color: rgba(111, 46, 68, .20); color: #6f2e44; }
+    .sexual-violence .art-number { font-size: 28px; letter-spacing: -.05em; }
+    .sexual-violence .art-caption { max-width: 270px; }
+
     .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 30px 36px; border-top: 1px solid var(--line); }
     .more h2 { margin: 0; font-size: 23px; font-weight: 600; line-height: 1.25; letter-spacing: -.05em; }
     .more p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
@@ -142,8 +152,8 @@
         <h1 id="page-title">Research with <em>perspective.</em></h1>
         <p class="hero-copy">A growing collection of reports, analysis and interactive data stories. Explore the work, follow the evidence and return for what comes next.</p>
       </div>
-      <div class="collection-count" aria-label="Two published reports">
-        <span class="count-number">02</span>
+      <div class="collection-count" aria-label="Three published reports">
+        <span class="count-number">03</span>
         <span class="count-caption">published reports<br>More to come</span>
       </div>
     </section>
@@ -200,6 +210,28 @@
               <p class="art-caption">Compare modelled outcomes across countries and decision years.</p>
             </div>
             <div class="art-footer"><span>Open the interactive model</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
+
+        <a class="report-card sexual-violence" href="https://aloysius109.github.io/sexual-violence-report/" aria-label="Read Sexual violence in perspective">
+          <div class="report-main">
+            <span class="featured-label"><span aria-hidden="true">◆</span> Evidence edition</span>
+            <h3 class="report-title">Sexual violence in perspective</h3>
+            <p class="report-description">Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.</p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">Worldwide evidence</span>
+              <span class="tag">UK detail</span>
+              <span class="tag">Power &amp; prevalence</span>
+              <span class="tag">Methods &amp; sources</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Evidence snapshot · Nov 2026</span>
+              <p class="art-number">138 countries</p>
+              <p class="art-caption">with downloadable WHO estimates in this report.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
           </div>
         </a>
       </div>
