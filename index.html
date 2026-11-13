@@ -97,6 +97,16 @@
     .sexual-violence .art-number { font-size: 28px; letter-spacing: -.05em; }
     .sexual-violence .art-caption { max-width: 270px; }
 
+    .spacex { background: #eaf1f7; }
+    .spacex .report-art { background: #355e80; background-image: linear-gradient(135deg, rgba(255,255,255,.1), transparent 70%); }
+    .spacex .report-art::before { border-color: rgba(235, 244, 250, .3); width: 200px; height: 200px; top: -8px; right: -52px; }
+    .spacex .report-art::after { border-color: rgba(235, 244, 250, .22); width: 135px; height: 135px; top: 24px; right: -10px; }
+    .spacex .featured-label { color: #31556f; }
+    .spacex .report-description { color: #465c6d; }
+    .spacex .tag { border-color: rgba(49, 85, 111, .22); color: #31556f; }
+    .spacex .art-number { font-size: 32px; letter-spacing: -.055em; }
+    .spacex .art-caption { max-width: 270px; }
+
     .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 30px 36px; border-top: 1px solid var(--line); }
     .more h2 { margin: 0; font-size: 23px; font-weight: 600; line-height: 1.25; letter-spacing: -.05em; }
     .more p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
@@ -152,8 +162,8 @@
         <h1 id="page-title">Research with <em>perspective.</em></h1>
         <p class="hero-copy">A growing collection of reports, analysis and interactive data stories. Explore the work, follow the evidence and return for what comes next.</p>
       </div>
-      <div class="collection-count" aria-label="Three published reports">
-        <span class="count-number">03</span>
+      <div class="collection-count" aria-label="Four published reports">
+        <span class="count-number">04</span>
         <span class="count-caption">published reports<br>More to come</span>
       </div>
     </section>
@@ -229,6 +239,27 @@
               <span class="art-label">Evidence snapshot · Nov 2026</span>
               <p class="art-number">138 countries</p>
               <p class="art-caption">with downloadable WHO estimates in this report.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
+        <a class="report-card spacex" href="https://aloysius109.github.io/data-science-projects/spacex/" aria-label="Read the SpaceX Falcon 9 landing prediction report">
+          <div class="report-main">
+            <span class="featured-label"><span aria-hidden="true">◆</span> Machine learning report</span>
+            <h3 class="report-title">SpaceX Falcon 9 landing prediction</h3>
+            <p class="report-description">Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches.</p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">90 launches</span>
+              <span class="tag">Landing outcomes</span>
+              <span class="tag">Model comparison</span>
+              <span class="tag">SpaceX</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Falcon 9 · Model report</span>
+              <p class="art-number">83.3% accuracy</p>
+              <p class="art-caption">shared holdout score across four models on 18 test launches.</p>
             </div>
             <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
           </div>
