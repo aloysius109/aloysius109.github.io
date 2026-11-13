@@ -108,6 +108,15 @@
     .spacex .tag { border-color: rgba(49, 85, 111, .22); color: #31556f; }
     .spacex .art-number { font-size: 32px; letter-spacing: -.055em; }
     .spacex .art-caption { max-width: 270px; }
+    .affordability { background: #f1f2e8; }
+    .affordability .report-art { background: #4a6e5d; background-image: linear-gradient(135deg, rgba(255,255,255,.1), transparent 70%); }
+    .affordability .report-art::before { border-color: rgba(235, 244, 235, .3); width: 200px; height: 200px; top: -8px; right: -52px; }
+    .affordability .report-art::after { border-color: rgba(235, 244, 235, .22); width: 135px; height: 135px; top: 24px; right: -10px; }
+    .affordability .featured-label { color: #345844; }
+    .affordability .report-description { color: #4c6155; }
+    .affordability .tag { border-color: rgba(52, 88, 68, .22); color: #345844; }
+    .affordability .art-number { font-size: 32px; letter-spacing: -.055em; }
+    .affordability .art-caption { max-width: 270px; }
     .featured-label.is-new { padding: 6px 10px; border-radius: 999px; background: var(--pink); color: #fff; letter-spacing: .09em; }
     .featured-label.is-new [aria-hidden="true"] { color: #ffe3a4; }
 
@@ -166,8 +175,8 @@
         <h1 id="page-title">Data, <em>in context.</em></h1>
         <p class="hero-copy">A growing collection of reports, analysis and interactive data stories. Explore the work, follow the evidence and return for what comes next.</p>
       </div>
-      <div class="collection-count" aria-label="Four published reports">
-        <span class="count-number">04</span>
+      <div class="collection-count" aria-label="Five published reports">
+        <span class="count-number">05</span>
         <span class="count-caption">published reports<br>More to come</span>
       </div>
     </section>
@@ -270,6 +279,28 @@
               <p class="art-caption">shared holdout score across four models on 18 test launches.</p>
             </div>
             <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
+        <a class="report-card affordability" data-published="2026-11-13" data-updated="2026-11-13" href="https://aloysius109.github.io/housing-affordability-report/" aria-label="Read The affordability squeeze report">
+          <div class="report-main">
+            <span class="featured-label" data-default-label="Housing affordability"><span aria-hidden="true">&#9670;</span><span class="report-label-text">Housing affordability</span></span>
+            <h3 class="report-title">The affordability squeeze</h3>
+            <p class="report-description">House prices still take years of local earnings to reach. Explore how ratios changed across 318 areas from 1997 to 2025 and where costs remain furthest out of reach.</p>
+            <p class="report-dates"><span>Published <time datetime="2026-11-13">13 Nov 2026</time></span><span>Updated <time datetime="2026-11-13">13 Nov 2026</time></span></p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">ONS data</span>
+              <span class="tag">England and Wales</span>
+              <span class="tag">1997-2025</span>
+              <span class="tag">Local ratios</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">ONS data | 2025</span>
+              <p class="art-number">294 / 317</p>
+              <p class="art-caption">local authorities above the five-times-earnings indicator.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">&#8599;</span></div>
           </div>
         </a>
       </div>
