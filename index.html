@@ -117,9 +117,17 @@
     .affordability .tag { border-color: rgba(52, 88, 68, .22); color: #345844; }
     .affordability .art-number { font-size: 32px; letter-spacing: -.055em; }
     .affordability .art-caption { max-width: 270px; }
+    .ev-chargers { background: #e8f1f3; }
+    .ev-chargers .report-art { background: #286274; background-image: linear-gradient(135deg, rgba(255,255,255,.1), transparent 70%); }
+    .ev-chargers .report-art::before { border-color: rgba(235, 246, 248, .3); width: 200px; height: 200px; top: -8px; right: -52px; }
+    .ev-chargers .report-art::after { border-color: rgba(235, 246, 248, .22); width: 135px; height: 135px; top: 24px; right: -10px; }
+    .ev-chargers .featured-label { color: #285766; }
+    .ev-chargers .report-description { color: #455e63; }
+    .ev-chargers .tag { border-color: rgba(40, 87, 102, .22); color: #285766; }
+    .ev-chargers .art-number { font-size: 32px; letter-spacing: -.055em; }
+    .ev-chargers .art-caption { max-width: 270px; }
     .featured-label.is-new { padding: 6px 10px; border-radius: 999px; background: var(--pink); color: #fff; letter-spacing: .09em; }
     .featured-label.is-new [aria-hidden="true"] { color: #ffe3a4; }
-
     .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 30px 36px; border-top: 1px solid var(--line); }
     .more h2 { margin: 0; font-size: 23px; font-weight: 600; line-height: 1.25; letter-spacing: -.05em; }
     .more p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
@@ -300,6 +308,28 @@
               <span class="art-label">ONS data | 2025</span>
               <p class="art-number">294 / 317</p>
               <p class="art-caption">local authorities above the five-times-earnings indicator.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">&#8599;</span></div>
+          </div>
+        </a>
+        <a class="report-card ev-chargers" data-published="2026-11-13" data-updated="2026-11-13" href="https://aloysius109.github.io/ev-charger-report/" aria-label="Read Where the UK plugs in, the public EV charger report">
+          <div class="report-main">
+            <span class="featured-label" data-default-label="EV charging report"><span aria-hidden="true">&#9670;</span><span class="report-label-text">EV charging report</span></span>
+            <h3 class="report-title">Where the UK plugs in</h3>
+            <p class="report-description">Explore how public EV charger provision varies by region, power and local authority, using the latest Department for Transport data.</p>
+            <p class="report-dates"><span>Published <time datetime="2026-11-13">13 Nov 2026</time></span><span>Updated <time datetime="2026-11-13">13 Nov 2026</time></span></p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">EV charging</span>
+              <span class="tag">361 local authorities</span>
+              <span class="tag">Regional coverage</span>
+              <span class="tag">DfT data</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">DfT data | July 2026</span>
+              <p class="art-number">174.9 / 100k</p>
+              <p class="art-caption">public EV chargers per 100,000 UK residents.</p>
             </div>
             <div class="art-footer"><span>Read the report</span><span class="card-arrow">&#8599;</span></div>
           </div>
