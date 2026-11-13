@@ -1,0 +1,47 @@
+/* Kathryn Hopkins homepage theme — reusable colour and typography tokens.
+   Load Manrope from Google Fonts in the HTML (or use the system fallbacks below).
+*/
+:root {
+  color-scheme: light;
+
+  /* Base palette */
+  --theme-paper: #fffaf8;
+  --theme-surface: #fffdfb;
+  --theme-ink: #26352e;
+  --theme-muted: #68756e;
+  --theme-line: #e9e1dd;
+
+  /* Sage / green report card */
+  --theme-green: #496b58;
+  --theme-deep-green: #365644;
+  --theme-pale-green: #edf2ec;
+
+  /* Blush report card */
+  --theme-pink: #a65370;
+  --theme-pale-pink: #f8e9ed;
+  --theme-pink-art: #a9677d;
+
+  /* Dusty blue report card */
+  --theme-blue-bg: #edf5f8;
+  --theme-blue-art: #365d71;
+  --theme-blue-ink: #2f4d5c;
+  --theme-blue-copy: #415d6a;
+
+  /* Typography */
+  --theme-font: "Manrope", "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--theme-paper);
+  color: var(--theme-ink);
+  font-family: var(--theme-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Optional semantic classes for cards in other projects. */
+.theme-card--sage { background: var(--theme-pale-green); color: var(--theme-ink); }
+.theme-card--sage .theme-card-art { background: var(--theme-green); color: #fff; }
+.theme-card--blush { background: var(--theme-pale-pink); color: var(--theme-ink); }
+.theme-card--blush .theme-card-art { background: var(--theme-pink-art); color: #fff; }
+.theme-card--blue { background: var(--theme-blue-bg); color: var(--theme-ink); }
+.theme-card--blue .theme-card-art { background: var(--theme-blue-art); color: #fff; }
