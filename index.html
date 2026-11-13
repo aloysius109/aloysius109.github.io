@@ -180,9 +180,9 @@
       </div>
 
       <div class="report-grid">
-        <a class="report-card" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
+        <a class="report-card" data-published="2026-11-05" data-updated="2026-11-06" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
           <div class="report-main">
-            <span class="featured-label"><span aria-hidden="true">◆</span> Featured report</span>
+            <span class="featured-label" data-default-label="Featured report"><span aria-hidden="true">◆</span><span class="report-label-text">Featured report</span></span>
             <h3 class="report-title">Asylum in perspective</h3>
             <p class="report-description">A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can tell us.</p>
             <p class="report-dates"><span>Published <time datetime="2026-11-05">5 Nov 2026</time></span><span>Updated <time datetime="2026-11-06">6 Nov 2026</time></span></p>
@@ -203,9 +203,9 @@
           </div>
         </a>
 
-        <a class="report-card predictive" href="https://aloysius109.github.io/predictive-analytics/" aria-label="Explore Predictive Analytics asylum outcomes">
+        <a class="report-card predictive" data-published="2026-11-07" data-updated="2026-11-13" href="https://aloysius109.github.io/predictive-analytics/" aria-label="Explore Predictive Analytics asylum outcomes">
           <div class="report-main">
-            <span class="featured-label"><span aria-hidden="true">◆</span> Interactive model</span>
+            <span class="featured-label" data-default-label="Interactive model"><span aria-hidden="true">◆</span><span class="report-label-text">Interactive model</span></span>
             <h3 class="report-title">Predictive Analytics</h3>
             <p class="report-description">Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion using historical UNHCR data.</p>
             <p class="report-dates"><span>Published <time datetime="2026-11-07">7 Nov 2026</time></span><span>Updated <time datetime="2026-11-13">13 Nov 2026</time></span></p>
@@ -226,9 +226,9 @@
           </div>
         </a>
 
-        <a class="report-card sexual-violence" href="https://aloysius109.github.io/sexual-violence-report/" aria-label="Read Sexual violence in perspective">
+        <a class="report-card sexual-violence" data-published="2026-11-06" data-updated="2026-11-06" href="https://aloysius109.github.io/sexual-violence-report/" aria-label="Read Sexual violence in perspective">
           <div class="report-main">
-            <span class="featured-label"><span aria-hidden="true">◆</span> Evidence edition</span>
+            <span class="featured-label" data-default-label="Evidence edition"><span aria-hidden="true">◆</span><span class="report-label-text">Evidence edition</span></span>
             <h3 class="report-title">Sexual violence in perspective</h3>
             <p class="report-description">Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.</p>
             <p class="report-dates"><span>Published <time datetime="2026-11-06">6 Nov 2026</time></span><span>Updated <time datetime="2026-11-06">6 Nov 2026</time></span></p>
@@ -248,9 +248,9 @@
             <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
           </div>
         </a>
-        <a class="report-card spacex" href="https://aloysius109.github.io/data-science-projects/spacex/" aria-label="Read the SpaceX Falcon 9 landing prediction report">
+        <a class="report-card spacex" data-published="2026-11-13" data-updated="2026-11-13" href="https://aloysius109.github.io/data-science-projects/spacex/" aria-label="Read the SpaceX Falcon 9 landing prediction report">
           <div class="report-main">
-            <span class="featured-label"><span aria-hidden="true">◆</span> New report</span>
+            <span class="featured-label" data-default-label="Machine learning report"><span aria-hidden="true">◆</span><span class="report-label-text">Machine learning report</span></span>
             <h3 class="report-title">SpaceX Falcon 9 landing prediction</h3>
             <p class="report-description">Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches.</p>
             <p class="report-dates"><span>Published <time datetime="2026-11-13">13 Nov 2026</time></span><span>Updated <time datetime="2026-11-13">13 Nov 2026</time></span></p>
@@ -285,5 +285,26 @@
       <a href="https://github.com/aloysius109">GitHub profile ↗</a>
     </div>
   </footer>
+  <!-- Add ISO publication/update dates and a default card label; the latest report is promoted automatically. -->
+  <script>
+    (() => {
+      const cards = Array.from(document.querySelectorAll(".report-card[data-published]"));
+      if (!cards.length) return;
+
+      const newest = cards.reduce((current, card) => {
+        const newerPublication = card.dataset.published > current.dataset.published;
+        const samePublication = card.dataset.published === current.dataset.published;
+        const updatedAtLeastAsNew = card.dataset.updated >= current.dataset.updated;
+        return newerPublication || (samePublication && updatedAtLeastAsNew) ? card : current;
+      });
+
+      cards.forEach((card) => {
+        const badge = card.querySelector(".featured-label");
+        const label = badge && badge.querySelector(".report-label-text");
+        if (!badge || !label) return;
+        label.textContent = card === newest ? "New report" : badge.dataset.defaultLabel;
+      });
+    })();
+  </script>
 </body>
 </html>
