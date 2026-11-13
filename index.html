@@ -133,7 +133,7 @@
       .shell { width: min(100% - 36px, 560px); }
       .site-header { min-height: 68px; }
       .header-nav { gap: 13px; }
-      .header-nav a:not(.nav-button) { display: none; }
+      .header-nav a:not(.nav-button):not(.nav-home) { display: none; }
       .hero { grid-template-columns: 1fr; gap: 25px; padding-block: 62px 47px; }
       .collection-count { width: fit-content; padding-left: 14px; }
       .count-number { font-size: 32px; }
@@ -162,6 +162,7 @@
       <span class="identity-name">Kathryn Hopkins<small>Data Scientist</small></span>
     </a>
     <nav class="header-nav" aria-label="Main navigation">
+      <a class="nav-home" href="./" aria-current="page">Home</a>
       <a href="#reports">The collection</a>
       <a href="https://github.com/aloysius109">GitHub</a>
       <a class="nav-button" href="#reports">Browse reports <span aria-hidden="true">↓</span></a>
