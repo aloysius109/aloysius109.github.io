@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f4ef">
-  <meta name="description" content="A home for independent reports, research and data-led stories by Kathryn Hopkins.">
+  <meta name="theme-color" content="#f4f3ed">
+  <meta name="description" content="Independent reports, research and data-led stories by Kathryn Hopkins.">
   <title>Reports &amp; Research — Kathryn Hopkins</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f5f4ef;
-      --card: #fffefa;
-      --ink: #1d2926;
-      --muted: #65716c;
+      --paper: #f4f3ed;
+      --surface: #fffefa;
+      --ink: #1c2925;
+      --muted: #64716b;
       --green: #164d43;
-      --green-dark: #103b34;
+      --deep: #103a33;
       --lime: #dce99a;
       --line: #d9ded6;
       --serif: Georgia, "Times New Roman", serif;
@@ -31,10 +31,10 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; }
-    a:focus-visible { outline: 3px solid #a9bf43; outline-offset: 4px; }
+    a:focus-visible { outline: 3px solid #9db13c; outline-offset: 4px; }
     .shell { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
 
-    .topbar {
+    .site-header {
       min-height: 78px;
       display: flex;
       align-items: center;
@@ -42,12 +42,12 @@
       gap: 24px;
       border-bottom: 1px solid var(--line);
     }
-    .identity { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .identity { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
     .monogram {
       display: grid;
       place-items: center;
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: var(--green);
       color: var(--lime);
@@ -56,19 +56,28 @@
     .identity-name { font-size: 14px; font-weight: 750; letter-spacing: -.02em; }
     .identity-name small {
       display: block;
-      margin-top: 2px;
+      margin-top: 3px;
       color: var(--muted);
-      font-size: 10px;
-      font-weight: 550;
-      letter-spacing: .08em;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
-    .top-link { color: var(--muted); font-size: 12px; text-decoration: none; }
-    .top-link:hover { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
+    .header-nav { display: flex; align-items: center; gap: 25px; font-size: 12px; }
+    .header-nav a { text-decoration: none; }
+    .header-nav a:not(.nav-button):hover { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
+    .nav-button { padding: 10px 14px; background: var(--green); color: white; font-weight: 700; }
+    .nav-button:hover { background: var(--deep); }
 
-    .intro { padding-block: clamp(62px, 9vw, 108px) 57px; }
-    .eyebrow, .section-label {
-      margin: 0 0 18px;
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      align-items: end;
+      gap: 50px;
+      padding-block: clamp(68px, 10vw, 112px) 67px;
+    }
+    .eyebrow, .section-kicker {
+      margin: 0 0 17px;
       color: var(--green);
       font-size: 10px;
       font-weight: 800;
@@ -78,29 +87,32 @@
     h1, h2, h3, p { margin-top: 0; }
     h1 {
       max-width: 760px;
-      margin-bottom: 20px;
+      margin-bottom: 19px;
       font: 500 clamp(54px, 8vw, 88px)/.98 var(--serif);
       letter-spacing: -.065em;
     }
     h1 em { color: var(--green); font-weight: 400; }
-    .intro-copy { max-width: 620px; margin: 0; color: #53605a; font-size: 17px; line-height: 1.7; }
+    .hero-copy { max-width: 610px; margin: 0; color: #53605a; font-size: 16px; line-height: 1.75; }
+    .collection-count { padding: 17px 0 3px 20px; border-left: 1px solid var(--line); }
+    .count-number { display: block; color: var(--green); font: 500 42px/1 var(--serif); letter-spacing: -.05em; }
+    .count-caption { display: block; margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.55; }
 
-    .pinned { padding-block: 34px 78px; border-top: 1px solid var(--line); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 23px; }
-    .section-heading h2 { margin: 0; font: 500 30px/1.1 var(--serif); letter-spacing: -.035em; }
-    .section-heading > p { max-width: 350px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .library { padding-block: 29px 84px; border-top: 1px solid var(--line); }
+    .library-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+    .library-heading h2 { margin: 0; font: 500 30px/1.1 var(--serif); letter-spacing: -.035em; }
+    .library-heading > p { max-width: 330px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
     .report-card {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(250px, .7fr);
-      min-height: 310px;
+      grid-template-columns: minmax(0, 1fr) minmax(270px, .7fr);
+      min-height: 330px;
       overflow: hidden;
       background: var(--green);
       color: white;
       text-decoration: none;
     }
     .report-card:hover .card-arrow { transform: translate(4px, -4px); }
-    .report-main { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(27px, 5vw, 48px); }
-    .pinned-label {
+    .report-main { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(28px, 5vw, 49px); }
+    .featured-label {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -113,47 +125,62 @@
     }
     .report-title { margin: 0 0 12px; font: 500 clamp(34px, 5vw, 52px)/1.04 var(--serif); letter-spacing: -.045em; }
     .report-description { max-width: 540px; margin-bottom: 25px; color: #e2ebe5; font-size: 14px; line-height: 1.7; }
-    .report-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
-    .tag { padding: 6px 9px; border: 1px solid rgba(255,255,255,.28); color: #eef4ed; font-size: 10px; }
-    .report-aside {
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .tag { padding: 6px 9px; border: 1px solid rgba(255,255,255,.3); color: #eef4ed; font-size: 10px; }
+    .report-art {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       min-height: 100%;
-      padding: 30px;
-      background-color: var(--green-dark);
-      background-image: radial-gradient(circle at 78% 27%, transparent 0 66px, rgba(220,233,154,.25) 67px 68px, transparent 69px 100px, rgba(220,233,154,.2) 101px 102px, transparent 103px), linear-gradient(140deg, rgba(255,255,255,.025), transparent 60%);
+      overflow: hidden;
+      padding: 29px;
+      background: var(--deep);
+      isolation: isolate;
     }
-    .aside-kicker { color: var(--lime); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
-    .aside-stat { margin: 10px 0 0; font: 500 clamp(47px, 6vw, 66px)/1 var(--serif); letter-spacing: -.06em; }
-    .aside-caption { max-width: 220px; margin: 8px 0 0; color: #dce5de; font-size: 12px; line-height: 1.6; }
-    .aside-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--lime); font-size: 11px; }
+    .report-art::before, .report-art::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      border: 1px solid rgba(220,233,154,.25);
+      border-radius: 50%;
+    }
+    .report-art::before { width: 290px; height: 290px; top: 24px; right: -78px; }
+    .report-art::after { width: 205px; height: 205px; top: 66px; right: -35px; }
+    .art-label { color: var(--lime); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    .art-number { margin: 10px 0 0; font: 500 clamp(48px, 6vw, 68px)/1 var(--serif); letter-spacing: -.06em; }
+    .art-caption { max-width: 230px; margin: 8px 0 0; color: #dce5de; font-size: 12px; line-height: 1.6; }
+    .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--lime); font-size: 11px; }
     .card-arrow { display: inline-block; font-size: 23px; transition: transform .2s ease; }
 
-    .future { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; padding-block: 32px 38px; border-top: 1px solid var(--line); }
-    .future h2 { margin: 0; font: 500 27px/1.15 var(--serif); letter-spacing: -.025em; }
-    .future p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 31px 38px; border-top: 1px solid var(--line); }
+    .more h2 { margin: 0; font: 500 27px/1.15 var(--serif); letter-spacing: -.025em; }
+    .more p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .more a { color: var(--green); font-weight: 700; text-underline-offset: 3px; }
     footer { border-top: 1px solid var(--line); }
-    .footer-inner { min-height: 75px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; }
+    .footer-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; }
     .footer-inner p { margin: 0; }
     .footer-inner a { text-underline-offset: 3px; }
 
-    @media (max-width: 680px) {
+    @media (max-width: 700px) {
       .shell { width: min(100% - 36px, 560px); }
-      .topbar { min-height: 68px; }
-      .intro { padding-block: 62px 45px; }
-      .section-heading { display: block; }
-      .section-heading > p { margin-top: 10px; }
+      .site-header { min-height: 68px; }
+      .header-nav { gap: 13px; }
+      .header-nav a:not(.nav-button) { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 25px; padding-block: 62px 47px; }
+      .collection-count { width: fit-content; padding-left: 14px; }
+      .count-number { font-size: 34px; }
+      .library-heading { display: block; }
+      .library-heading > p { margin-top: 10px; }
       .report-card { grid-template-columns: 1fr; }
-      .report-aside { min-height: 190px; }
-      .future { grid-template-columns: 1fr; gap: 14px; }
-      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 20px; }
+      .report-art { min-height: 205px; }
+      .more { grid-template-columns: 1fr; gap: 14px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 19px; }
     }
     @media (max-width: 420px) {
-      .top-link { max-width: 100px; text-align: right; }
-      h1 { font-size: 53px; }
-      .report-main { padding: 25px 22px; }
-      .report-aside { padding: 23px 22px; }
+      .identity-name { font-size: 13px; }
+      h1 { font-size: 52px; }
+      .report-main, .report-art { padding: 24px 21px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
@@ -161,57 +188,67 @@
   </style>
 </head>
 <body>
-  <header class="shell topbar">
+  <header class="shell site-header">
     <a class="identity" href="./" aria-label="Reports and research home">
       <span class="monogram" aria-hidden="true">K</span>
       <span class="identity-name">Kathryn Hopkins<small>Reports &amp; research</small></span>
     </a>
-    <a class="top-link" href="https://github.com/aloysius109">View GitHub profile ↗</a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="#reports">The collection</a>
+      <a href="https://github.com/aloysius109">GitHub</a>
+      <a class="nav-button" href="#reports">Browse reports <span aria-hidden="true">↓</span></a>
+    </nav>
   </header>
 
   <main>
-    <section class="shell intro" aria-labelledby="page-title">
-      <p class="eyebrow">Independent research · Data-led stories</p>
-      <h1 id="page-title">A home for <em>the reports.</em></h1>
-      <p class="intro-copy">Research, analysis and interactive data stories in one place. Start with a pinned report, then come back as the collection grows.</p>
+    <section class="shell hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Independent research · Data-led stories</p>
+        <h1 id="page-title">Research with <em>perspective.</em></h1>
+        <p class="hero-copy">A growing collection of reports, analysis and interactive data stories. Explore the work, follow the evidence and return for what comes next.</p>
+      </div>
+      <div class="collection-count" aria-label="One published report">
+        <span class="count-number">01</span>
+        <span class="count-caption">published report<br>More to come</span>
+      </div>
     </section>
 
-    <section class="shell pinned" aria-labelledby="pinned-title">
-      <div class="section-heading">
+    <section class="shell library" id="reports" aria-labelledby="reports-title">
+      <div class="library-heading">
         <div>
-          <p class="section-label">The collection</p>
-          <h2 id="pinned-title">Pinned reports</h2>
+          <p class="section-kicker">Curated collection</p>
+          <h2 id="reports-title">Pinned reports</h2>
         </div>
-        <p>Selected work, brought together in one library.</p>
+        <p>Selected publications, gathered in one place.</p>
       </div>
 
-      <!-- To pin another report, duplicate this report-card and update its title, description, tags and destination URL. -->
-      <a class="report-card" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Open Asylum in perspective report">
+      <!-- Add a report by duplicating this article and changing its link, title, summary and tags. -->
+      <a class="report-card" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
         <div class="report-main">
-          <span class="pinned-label"><span aria-hidden="true">◆</span> Featured report</span>
+          <span class="featured-label"><span aria-hidden="true">◆</span> Featured report</span>
           <h3 class="report-title">Asylum in perspective</h3>
           <p class="report-description">A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can and cannot tell us.</p>
-          <span class="report-meta">
+          <span class="tags" aria-label="Report topics">
             <span class="tag">Global analysis</span>
             <span class="tag">Country comparisons</span>
             <span class="tag">UNHCR data</span>
             <span class="tag">2000–2025 edition</span>
           </span>
         </div>
-        <div class="report-aside" aria-hidden="true">
+        <div class="report-art" aria-hidden="true">
           <div>
-            <span class="aside-kicker">Latest edition · 2025</span>
-            <p class="aside-stat">9.0m</p>
-            <p class="aside-caption">people in the observed global asylum-seeker stock at year end.</p>
+            <span class="art-label">Latest edition · 2025</span>
+            <p class="art-number">9.0m</p>
+            <p class="art-caption">people in the observed global asylum-seeker stock at year end.</p>
           </div>
-          <div class="aside-bottom"><span>Read the report</span><span class="card-arrow">↗</span></div>
+          <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
         </div>
       </a>
     </section>
 
-    <aside class="shell future" aria-labelledby="future-title">
-      <h2 id="future-title">One place to find the work.</h2>
-      <p>This is a curated index, not a feed: reports are added here when they are ready to share. To pin another publication, duplicate the report card in this page’s <a href="https://github.com/aloysius109/aloysius109.github.io/blob/main/index.html">source</a>, then update its title, summary, tags and link to the published report.</p>
+    <aside class="shell more" aria-labelledby="more-title">
+      <h2 id="more-title">A living library.</h2>
+      <p>Reports are added as they are ready to share. To pin another publication, duplicate the report card in this page’s <a href="https://github.com/aloysius109/aloysius109.github.io/blob/main/index.html">source</a>, then update its title, description, tags and destination link.</p>
     </aside>
   </main>
 
