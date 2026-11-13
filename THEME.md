@@ -1,13 +1,13 @@
 # Homepage theme template
 
-The reusable palette and typography tokens for the homepage are in [`theme.css`](theme.css).
+The reusable palette and typography tokens for the homepage are in [`theme.css`](theme.css). The template reflects the current cool pale-blue page background, with sage, blush and dusty-blue report accents.
 
 ## Colours
 
 | Role | Colour |
 | --- | --- |
-| Warm paper | `#fffaf8` |
-| Surface | `#fffdfb` |
+| Cool pale-blue background | `#f4f8fb` |
+| White surface | `#ffffff` |
 | Main text | `#26352e` |
 | Muted text | `#68756e` |
 | Sage card | `#edf2ec` |
@@ -16,7 +16,7 @@ The reusable palette and typography tokens for the homepage are in [`theme.css`]
 | Blush artwork | `#a9677d` |
 | Dusty blue card | `#edf5f8` |
 | Dusty blue artwork | `#365d71` |
-| Fine borders | `#e9e1dd` |
+| Cool fine borders | `#dce6eb` |
 
 ## Typography
 

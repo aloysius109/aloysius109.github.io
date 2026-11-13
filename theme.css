@@ -4,12 +4,12 @@
 :root {
   color-scheme: light;
 
-  /* Base palette */
-  --theme-paper: #fffaf8;
-  --theme-surface: #fffdfb;
+  /* Cool, pale-blue base palette */
+  --theme-paper: #f4f8fb;
+  --theme-surface: #ffffff;
   --theme-ink: #26352e;
   --theme-muted: #68756e;
-  --theme-line: #e9e1dd;
+  --theme-line: #dce6eb;
 
   /* Sage / green report card */
   --theme-green: #496b58;
