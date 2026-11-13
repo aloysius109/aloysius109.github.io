@@ -108,6 +108,8 @@
     .spacex .tag { border-color: rgba(49, 85, 111, .22); color: #31556f; }
     .spacex .art-number { font-size: 32px; letter-spacing: -.055em; }
     .spacex .art-caption { max-width: 270px; }
+    .featured-label.is-new { padding: 6px 10px; border-radius: 999px; background: var(--pink); color: #fff; letter-spacing: .09em; }
+    .featured-label.is-new [aria-hidden="true"] { color: #ffe3a4; }
 
     .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 30px 36px; border-top: 1px solid var(--line); }
     .more h2 { margin: 0; font-size: 23px; font-weight: 600; line-height: 1.25; letter-spacing: -.05em; }
@@ -302,7 +304,9 @@
         const badge = card.querySelector(".featured-label");
         const label = badge && badge.querySelector(".report-label-text");
         if (!badge || !label) return;
-        label.textContent = card === newest ? "New report" : badge.dataset.defaultLabel;
+        const isNewest = card === newest;
+        label.textContent = isNewest ? "New report" : badge.dataset.defaultLabel;
+        badge.classList.toggle("is-new", isNewest);
       });
     })();
   </script>
