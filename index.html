@@ -23,74 +23,26 @@
 
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
     a:focus-visible { outline: 3px solid #9db13c; outline-offset: 4px; }
     .shell { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
 
-    .site-header {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-    }
+    .site-header { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
     .identity { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-    .monogram {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--green);
-      color: var(--lime);
-      font: 700 17px var(--serif);
-    }
+    .monogram { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: var(--lime); font: 700 17px var(--serif); }
     .identity-name { font-size: 14px; font-weight: 750; letter-spacing: -.02em; }
-    .identity-name small {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
+    .identity-name small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
     .header-nav { display: flex; align-items: center; gap: 25px; font-size: 12px; }
     .header-nav a { text-decoration: none; }
     .header-nav a:not(.nav-button):hover { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
     .nav-button { padding: 10px 14px; background: var(--green); color: white; font-weight: 700; }
     .nav-button:hover { background: var(--deep); }
 
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 230px;
-      align-items: end;
-      gap: 50px;
-      padding-block: clamp(68px, 10vw, 112px) 67px;
-    }
-    .eyebrow, .section-kicker {
-      margin: 0 0 17px;
-      color: var(--green);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 230px; align-items: end; gap: 50px; padding-block: clamp(68px, 10vw, 112px) 67px; }
+    .eyebrow, .section-kicker { margin: 0 0 17px; color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
     h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      max-width: 760px;
-      margin-bottom: 19px;
-      font: 500 clamp(54px, 8vw, 88px)/.98 var(--serif);
-      letter-spacing: -.065em;
-    }
+    h1 { max-width: 760px; margin-bottom: 19px; font: 500 clamp(54px, 8vw, 88px)/.98 var(--serif); letter-spacing: -.065em; }
     h1 em { color: var(--green); font-weight: 400; }
     .hero-copy { max-width: 610px; margin: 0; color: #53605a; font-size: 16px; line-height: 1.75; }
     .collection-count { padding: 17px 0 3px 20px; border-left: 1px solid var(--line); }
@@ -101,57 +53,36 @@
     .library-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
     .library-heading h2 { margin: 0; font: 500 30px/1.1 var(--serif); letter-spacing: -.035em; }
     .library-heading > p { max-width: 330px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
-    .report-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(270px, .7fr);
-      min-height: 330px;
-      overflow: hidden;
-      background: var(--green);
-      color: white;
-      text-decoration: none;
-    }
+    .report-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .report-card { display: flex; min-height: 345px; flex-direction: column; overflow: hidden; background: var(--green); color: white; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+    .report-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(28, 41, 37, .13); }
+    .report-main { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: clamp(24px, 3vw, 34px); }
+    .featured-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 21px; color: var(--lime); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .report-title { margin: 0 0 12px; font: 500 clamp(29px, 3.4vw, 39px)/1.07 var(--serif); letter-spacing: -.04em; }
+    .report-description { max-width: 540px; margin-bottom: 22px; color: #e2ebe5; font-size: 13px; line-height: 1.7; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+    .tag { padding: 6px 8px; border: 1px solid rgba(255,255,255,.3); color: #eef4ed; font-size: 9px; }
+    .report-art { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 145px; overflow: hidden; padding: 22px 26px; background: var(--deep); isolation: isolate; }
+    .report-art::before, .report-art::after { position: absolute; z-index: -1; content: ""; border: 1px solid rgba(220,233,154,.25); border-radius: 50%; }
+    .report-art::before { width: 230px; height: 230px; top: 10px; right: -48px; }
+    .report-art::after { width: 160px; height: 160px; top: 45px; right: -12px; }
+    .art-label { color: var(--lime); font-size: 9px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    .art-number { margin: 5px 0 0; font: 500 43px/1 var(--serif); letter-spacing: -.06em; }
+    .art-caption { max-width: 230px; margin: 6px 0 0; color: #dce5de; font-size: 11px; line-height: 1.5; }
+    .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--lime); font-size: 10px; }
+    .card-arrow { display: inline-block; font-size: 20px; transition: transform .2s ease; }
     .report-card:hover .card-arrow { transform: translate(4px, -4px); }
-    .report-main { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(28px, 5vw, 49px); }
-    .featured-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 25px;
-      color: var(--lime);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-    .report-title { margin: 0 0 12px; font: 500 clamp(34px, 5vw, 52px)/1.04 var(--serif); letter-spacing: -.045em; }
-    .report-description { max-width: 540px; margin-bottom: 25px; color: #e2ebe5; font-size: 14px; line-height: 1.7; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
-    .tag { padding: 6px 9px; border: 1px solid rgba(255,255,255,.3); color: #eef4ed; font-size: 10px; }
-    .report-art {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 100%;
-      overflow: hidden;
-      padding: 29px;
-      background: var(--deep);
-      isolation: isolate;
-    }
-    .report-art::before, .report-art::after {
-      position: absolute;
-      z-index: -1;
-      content: "";
-      border: 1px solid rgba(220,233,154,.25);
-      border-radius: 50%;
-    }
-    .report-art::before { width: 290px; height: 290px; top: 24px; right: -78px; }
-    .report-art::after { width: 205px; height: 205px; top: 66px; right: -35px; }
-    .art-label { color: var(--lime); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
-    .art-number { margin: 10px 0 0; font: 500 clamp(48px, 6vw, 68px)/1 var(--serif); letter-spacing: -.06em; }
-    .art-caption { max-width: 230px; margin: 8px 0 0; color: #dce5de; font-size: 12px; line-height: 1.6; }
-    .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--lime); font-size: 11px; }
-    .card-arrow { display: inline-block; font-size: 23px; transition: transform .2s ease; }
+
+    .predictive { background: #33263e; }
+    .predictive .report-art { background-color: #241b2e; background-image: radial-gradient(ellipse at 75% 45%, rgba(196, 159, 220, .2), transparent 58%), linear-gradient(135deg, rgba(102, 74, 121, .5), transparent 60%); }
+    .predictive .report-art::before { border-color: rgba(224, 201, 238, .34); width: 220px; height: 220px; top: -25px; right: -45px; }
+    .predictive .report-art::after { border-color: rgba(224, 201, 238, .23); width: 145px; height: 145px; top: 12px; right: -8px; }
+    .predictive .featured-label, .predictive .art-label, .predictive .art-footer { color: #e2c4f0; }
+    .predictive .report-art { color: #f5eafa; }
+    .predictive .report-description { color: #eee5f2; }
+    .predictive .tag { border-color: rgba(255,255,255,.27); }
+    .predictive .art-number { font-size: 36px; }
+    .predictive .art-caption { max-width: 260px; }
 
     .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 31px 38px; border-top: 1px solid var(--line); }
     .more h2 { margin: 0; font: 500 27px/1.15 var(--serif); letter-spacing: -.025em; }
@@ -162,7 +93,7 @@
     .footer-inner p { margin: 0; }
     .footer-inner a { text-underline-offset: 3px; }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       .shell { width: min(100% - 36px, 560px); }
       .site-header { min-height: 68px; }
       .header-nav { gap: 13px; }
@@ -172,15 +103,16 @@
       .count-number { font-size: 34px; }
       .library-heading { display: block; }
       .library-heading > p { margin-top: 10px; }
-      .report-card { grid-template-columns: 1fr; }
-      .report-art { min-height: 205px; }
+      .report-grid { grid-template-columns: 1fr; }
+      .report-card { min-height: 300px; }
+      .report-art { min-height: 155px; }
       .more { grid-template-columns: 1fr; gap: 14px; }
       .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 19px; }
     }
     @media (max-width: 420px) {
       .identity-name { font-size: 13px; }
       h1 { font-size: 52px; }
-      .report-main, .report-art { padding: 24px 21px; }
+      .report-main, .report-art { padding: 23px 20px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
@@ -207,9 +139,9 @@
         <h1 id="page-title">Research with <em>perspective.</em></h1>
         <p class="hero-copy">A growing collection of reports, analysis and interactive data stories. Explore the work, follow the evidence and return for what comes next.</p>
       </div>
-      <div class="collection-count" aria-label="One published report">
-        <span class="count-number">01</span>
-        <span class="count-caption">published report<br>More to come</span>
+      <div class="collection-count" aria-label="Two published reports">
+        <span class="count-number">02</span>
+        <span class="count-caption">published reports<br>More to come</span>
       </div>
     </section>
 
@@ -222,33 +154,57 @@
         <p>Selected publications, gathered in one place.</p>
       </div>
 
-      <!-- Add a report by duplicating this article and changing its link, title, summary and tags. -->
-      <a class="report-card" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
-        <div class="report-main">
-          <span class="featured-label"><span aria-hidden="true">◆</span> Featured report</span>
-          <h3 class="report-title">Asylum in perspective</h3>
-          <p class="report-description">A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can and cannot tell us.</p>
-          <span class="tags" aria-label="Report topics">
-            <span class="tag">Global analysis</span>
-            <span class="tag">Country comparisons</span>
-            <span class="tag">UNHCR data</span>
-            <span class="tag">2000–2025 edition</span>
-          </span>
-        </div>
-        <div class="report-art" aria-hidden="true">
-          <div>
-            <span class="art-label">Latest edition · 2025</span>
-            <p class="art-number">9.0m</p>
-            <p class="art-caption">people in the observed global asylum-seeker stock at year end.</p>
+      <!-- To add a report, duplicate a report-card and update its URL, title, summary and tags. -->
+      <div class="report-grid">
+        <a class="report-card" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
+          <div class="report-main">
+            <span class="featured-label"><span aria-hidden="true">◆</span> Featured report</span>
+            <h3 class="report-title">Asylum in perspective</h3>
+            <p class="report-description">A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can and cannot tell us.</p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">Global analysis</span>
+              <span class="tag">Country comparisons</span>
+              <span class="tag">UNHCR data</span>
+              <span class="tag">2000–2025 edition</span>
+            </span>
           </div>
-          <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
-        </div>
-      </a>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Latest edition · 2025</span>
+              <p class="art-number">9.0m</p>
+              <p class="art-caption">people in the observed global asylum-seeker stock at year end.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
+
+        <a class="report-card predictive" href="https://aloysius109.github.io/predictive-analytics/" aria-label="Explore Predictive Analytics asylum outcomes">
+          <div class="report-main">
+            <span class="featured-label"><span aria-hidden="true">◆</span> Interactive model</span>
+            <h3 class="report-title">Predictive Analytics</h3>
+            <p class="report-description">Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion that uses historical UNHCR decision data to put patterns in context.</p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">Interactive</span>
+              <span class="tag">Decision outcomes</span>
+              <span class="tag">Scenario explorer</span>
+              <span class="tag">UNHCR data</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Choose a route · Explore outcomes</span>
+              <p class="art-number">Origin → asylum</p>
+              <p class="art-caption">Compare modelled outcomes across countries and decision years.</p>
+            </div>
+            <div class="art-footer"><span>Open the interactive model</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
+      </div>
     </section>
 
     <aside class="shell more" aria-labelledby="more-title">
       <h2 id="more-title">A living library.</h2>
-      <p>Reports are added as they are ready to share. To pin another publication, duplicate the report card in this page’s <a href="https://github.com/aloysius109/aloysius109.github.io/blob/main/index.html">source</a>, then update its title, description, tags and destination link.</p>
+      <p>Reports are added as they are ready to share. To pin another publication, duplicate a report card in this page’s <a href="https://github.com/aloysius109/aloysius109.github.io/blob/main/index.html">source</a>, then update its title, description, tags and destination link.</p>
     </aside>
   </main>
 
