@@ -156,7 +156,7 @@ def write_icons():
   <text x="32" y="46" fill="#ffffff" font-family="Arial,sans-serif" font-size="44" font-weight="700" text-anchor="middle">K</text>
 </svg>
 '''
-    (ASSETS / "favicon.svg").write_text(svg, encoding="utf-8")
+    (ROOT / "favicon.svg").write_text(svg, encoding="utf-8")
 
     icon_font = font_manager.findfont(font_manager.FontProperties(family="DejaVu Sans", weight="bold"))
     image = Image.new("RGB", (180, 180), GREEN)
@@ -166,9 +166,9 @@ def write_icons():
     x = (180 - (bounds[2] - bounds[0])) / 2 - bounds[0]
     y = (180 - (bounds[3] - bounds[1])) / 2 - bounds[1] - 4
     draw.text((x, y), "K", fill="white", font=font)
-    image.save(ASSETS / "apple-touch-icon.png", format="PNG", optimize=True)
+    image.save(ROOT / "apple-touch-icon.png", format="PNG", optimize=True)
     image.resize((48, 48), Image.Resampling.LANCZOS).save(
-        ASSETS / "favicon.ico",
+        ROOT / "favicon.ico",
         format="ICO",
         sizes=[(16, 16), (32, 32), (48, 48)],
     )
