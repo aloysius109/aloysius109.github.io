@@ -184,8 +184,8 @@
         <h1 id="page-title">Data, <em>in context.</em></h1>
         <p class="hero-copy">A growing collection of reports, analysis and interactive data stories. Explore the work, follow the evidence and return for what comes next.</p>
       </div>
-      <div class="collection-count" aria-label="Five published reports">
-        <span class="count-number">05</span>
+      <div class="collection-count" aria-label="Six published reports">
+        <span class="count-number">06</span>
         <span class="count-caption">published reports<br>More to come</span>
       </div>
     </section>
@@ -353,6 +353,11 @@
   <script>
     (() => {
       const cards = Array.from(document.querySelectorAll(".report-card[data-published]"));
+      const count = document.querySelector(".collection-count");
+      const countNumber = count && count.querySelector(".count-number");
+      const numberWords = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+      if (countNumber) countNumber.textContent = String(cards.length).padStart(2, "0");
+      if (count) count.setAttribute("aria-label", `${numberWords[cards.length] || cards.length} published report${cards.length === 1 ? "" : "s"}`);
       if (!cards.length) return;
 
       const newest = cards.reduce((current, card) => {
