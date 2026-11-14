@@ -33,6 +33,16 @@ CARDS = [
         "tint": "#edf2ec",
     },
     {
+        "slug": "cv",
+        "kicker": "CURRICULUM VITAE  ·  DATA SCIENCE",
+        "title": "Kathryn Hopkins\nData Scientist",
+        "description": "Analytics leadership, public-sector research\nand applied data science.",
+        "metric": "PhD",
+        "metric_label": "Environmental Science",
+        "accent": GREEN,
+        "tint": "#edf2ec",
+    },
+    {
         "slug": "asylum",
         "kicker": "GLOBAL ASYLUM  ·  UNHCR DATA",
         "title": "Asylum in\nperspective",
