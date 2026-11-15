@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f8fb">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f8fb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#11181c">
   <meta name="description" content="Data science, independent research and data-led stories by Kathryn Hopkins.">
   <link rel="canonical" href="https://aloysius109.github.io/">
   <meta property="og:type" content="website">
@@ -20,6 +21,7 @@
   <meta name="twitter:description" content="Data science, independent research and data-led stories by Kathryn Hopkins.">
   <meta name="twitter:image" content="https://aloysius109.github.io/assets/og/portfolio.png">
   <meta name="twitter:image:alt" content="Kathryn Hopkins — Data, in context. Data science, independent research and data-led stories.">
+  <link rel="alternate" type="application/atom+xml" title="Kathryn Hopkins — Data, in context" href="https://aloysius109.github.io/feed.xml">
   <link rel="icon" type="image/svg+xml" href="https://aloysius109.github.io/favicon.svg">
   <link rel="icon" href="https://aloysius109.github.io/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="https://aloysius109.github.io/apple-touch-icon.png">
@@ -29,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light;
+      color-scheme: light dark;
       --paper: #f4f8fb;
       --surface: #ffffff;
       --ink: #26352e;
@@ -40,7 +42,59 @@
       --pale-pink: #f8e9ed;
       --pale-green: #edf2ec;
       --line: #dce6eb;
+      --white: #ffffff;
+      --body-copy: #59675f;
+      --card-copy-default: #526258;
+      --tag-ink: #40594a;
+      --tag-border-default: rgba(54, 86, 68, .2);
+      --card-border: rgba(54, 86, 68, .07);
+      --card-shadow: rgba(41, 58, 50, .09);
+      --art-default: #496b58;
+      --art-label: #f8e6eb;
+      --art-copy: #f3f5f0;
+      --art-ring: rgba(255, 248, 246, .23);
+      --art-glow: rgba(255, 255, 255, .1);
+      --panel-bg: rgba(255, 255, 255, .62);
+      --highlight: #ffe3a4;
+      --button-bg: #496b58;
+      --button-hover: #365644;
+      --button-text: #ffffff;
       --sans: "Manrope", "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      --predictive-bg: #f8e9ed;
+      --predictive-art: #92546a;
+      --predictive-accent: #8d4661;
+      --predictive-copy: #66525a;
+      --predictive-tag: #774258;
+      --predictive-tag-border: rgba(141, 70, 97, .24);
+      --predictive-ring: rgba(255, 241, 245, .26);
+      --sexual-violence-bg: #edf5f8;
+      --sexual-violence-art: #365d71;
+      --sexual-violence-accent: #2f4d5c;
+      --sexual-violence-copy: #415d6a;
+      --sexual-violence-tag: #2f4d5c;
+      --sexual-violence-tag-border: rgba(47, 77, 92, .2);
+      --sexual-violence-ring: rgba(231, 240, 245, .25);
+      --spacex-bg: #eaf1f7;
+      --spacex-art: #355e80;
+      --spacex-accent: #31556f;
+      --spacex-copy: #465c6d;
+      --spacex-tag: #31556f;
+      --spacex-tag-border: rgba(49, 85, 111, .22);
+      --spacex-ring: rgba(235, 244, 250, .25);
+      --affordability-bg: #f1f2e8;
+      --affordability-art: #4a6e5d;
+      --affordability-accent: #345844;
+      --affordability-copy: #4c6155;
+      --affordability-tag: #345844;
+      --affordability-tag-border: rgba(52, 88, 68, .22);
+      --affordability-ring: rgba(235, 244, 235, .25);
+      --ev-chargers-bg: #e8f1f3;
+      --ev-chargers-art: #286274;
+      --ev-chargers-accent: #285766;
+      --ev-chargers-copy: #455e63;
+      --ev-chargers-tag: #285766;
+      --ev-chargers-tag-border: rgba(40, 87, 102, .22);
+      --ev-chargers-ring: rgba(235, 246, 248, .25);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -52,21 +106,21 @@
 
     .site-header { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
     .identity { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
-    .monogram { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--green); color: white; font-size: 14px; font-weight: 700; }
+    .monogram { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--button-bg); color: var(--button-text); font-size: 14px; font-weight: 700; }
     .identity-name { font-size: 13px; font-weight: 700; letter-spacing: -.025em; }
     .identity-name small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
     .header-nav { display: flex; align-items: center; gap: 25px; font-size: 12px; font-weight: 600; }
     .header-nav a { text-decoration: none; }
     .header-nav a:not(.nav-button):hover { color: var(--pink); }
-    .nav-button { padding: 10px 14px; border-radius: 3px; background: var(--green); color: white; font-weight: 700; transition: background .2s ease; }
-    .nav-button:hover { background: var(--deep-green); }
+    .nav-button { padding: 10px 14px; border-radius: 3px; background: var(--button-bg); color: var(--button-text); font-weight: 700; transition: background .2s ease; }
+    .nav-button:hover { background: var(--button-hover); }
 
     .hero { display: grid; grid-template-columns: minmax(0, 1fr) 190px; align-items: end; gap: 50px; padding-block: clamp(68px, 9vw, 104px) 65px; }
     .eyebrow, .section-kicker { margin: 0 0 16px; color: var(--pink); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
     h1, h2, h3, p { margin-top: 0; }
     h1 { max-width: 760px; margin-bottom: 20px; font-size: clamp(48px, 7vw, 76px); font-weight: 600; line-height: 1.02; letter-spacing: -.075em; }
     h1 em { color: var(--green); font-style: normal; }
-    .hero-copy { max-width: 590px; margin: 0; color: #59675f; font-size: 15px; line-height: 1.8; }
+    .hero-copy { max-width: 590px; margin: 0; color: var(--body-copy); font-size: 15px; line-height: 1.8; }
     .collection-count { padding: 12px 0 3px 18px; border-left: 1px solid var(--line); }
     .count-number { display: block; color: var(--pink); font-size: 38px; font-weight: 500; line-height: 1; letter-spacing: -.07em; }
     .count-caption { display: block; margin-top: 9px; color: var(--muted); font-size: 11px; line-height: 1.55; }
@@ -76,76 +130,56 @@
     .library-heading h2 { margin: 0; font-size: 25px; font-weight: 600; line-height: 1.2; letter-spacing: -.055em; }
     .library-heading > p { max-width: 330px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
     .report-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .report-card { display: flex; min-height: 330px; flex-direction: column; overflow: hidden; border: 1px solid rgba(54, 86, 68, .07); border-radius: 14px; background: var(--pale-green); color: var(--ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
-    .report-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(41, 58, 50, .09); }
+    .report-card { --card-bg: var(--pale-green); --card-art: var(--art-default); --card-accent: var(--green); --card-copy: var(--card-copy-default); --card-tag: var(--tag-ink); --card-tag-border: var(--tag-border-default); --card-ring: var(--art-ring); display: flex; min-height: 330px; flex-direction: column; overflow: hidden; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); color: var(--ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+    .report-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px var(--card-shadow); }
     .report-main { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: clamp(24px, 3vw, 32px); }
-    .featured-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--green); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .featured-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--card-accent); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .report-title { margin: 0 0 11px; font-size: clamp(25px, 3vw, 32px); font-weight: 600; line-height: 1.15; letter-spacing: -.06em; }
-    .report-description { max-width: 540px; margin-bottom: 21px; color: #526258; font-size: 12px; line-height: 1.75; }
+    .report-description { max-width: 540px; margin-bottom: 21px; color: var(--card-copy); font-size: 12px; line-height: 1.75; }
     .report-dates { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: -10px 0 17px; color: var(--muted); font-size: 9px; line-height: 1.5; }
     .report-dates time { color: var(--ink); font-weight: 700; }
     .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
-    .tag { padding: 5px 8px; border: 1px solid rgba(54, 86, 68, .2); border-radius: 2px; color: #40594a; font-size: 9px; }
-    .report-art { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px; overflow: hidden; padding: 20px 25px; background: var(--green); isolation: isolate; color: white; }
-    .report-art::before, .report-art::after { position: absolute; z-index: -1; content: ""; border: 1px solid rgba(255, 248, 246, .23); border-radius: 50%; }
+    .tag { padding: 5px 8px; border: 1px solid var(--card-tag-border); border-radius: 2px; color: var(--card-tag); font-size: 9px; }
+    .report-art { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px; overflow: hidden; padding: 20px 25px; background-color: var(--card-art); background-image: linear-gradient(135deg, var(--art-glow), transparent 70%); isolation: isolate; color: var(--white); }
+    .report-art::before, .report-art::after { position: absolute; z-index: -1; content: ""; border: 1px solid var(--card-ring); border-radius: 50%; }
     .report-art::before { width: 210px; height: 210px; top: 14px; right: -58px; }
     .report-art::after { width: 145px; height: 145px; top: 46px; right: -22px; }
-    .art-label { color: #f8e6eb; font-size: 9px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .art-label { color: var(--art-label); font-size: 9px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
     .art-number { margin: 7px 0 0; font-size: 38px; font-weight: 500; line-height: 1.05; letter-spacing: -.07em; }
-    .art-caption { max-width: 230px; margin: 6px 0 0; color: #f3f5f0; font-size: 10px; line-height: 1.55; }
-    .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #f8e6eb; font-size: 10px; font-weight: 600; }
+    .art-caption { max-width: 230px; margin: 6px 0 0; color: var(--art-copy); font-size: 10px; line-height: 1.55; }
+    .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--art-label); font-size: 10px; font-weight: 600; }
     .card-arrow { display: inline-block; font-size: 18px; transition: transform .2s ease; }
     .report-card:hover .card-arrow { transform: translate(3px, -3px); }
 
-    .predictive { background: var(--pale-pink); }
-    .predictive .report-art { background-color: #a9677d; background-image: linear-gradient(135deg, rgba(255, 255, 255, .09), transparent 65%); }
-    .predictive .report-art::before { border-color: rgba(255, 241, 245, .3); width: 200px; height: 200px; top: -20px; right: -52px; }
-    .predictive .report-art::after { border-color: rgba(255, 241, 245, .22); width: 135px; height: 135px; top: 14px; right: -16px; }
-    .predictive .featured-label { color: #8d4661; }
-    .predictive .report-description { color: #66525a; }
-    .predictive .tag { border-color: rgba(141, 70, 97, .24); color: #774258; }
+    .predictive { --card-bg: var(--predictive-bg); --card-art: var(--predictive-art); --card-accent: var(--predictive-accent); --card-copy: var(--predictive-copy); --card-tag: var(--predictive-tag); --card-tag-border: var(--predictive-tag-border); --card-ring: var(--predictive-ring); }
+    .predictive .report-art::before { width: 200px; height: 200px; top: -20px; right: -52px; }
+    .predictive .report-art::after { width: 135px; height: 135px; top: 14px; right: -16px; }
     .predictive .art-number { font-size: 30px; letter-spacing: -.055em; }
     .predictive .art-caption { max-width: 260px; }
 
-    .sexual-violence { background: #edf5f8; }
-    .sexual-violence .report-art { background: #365d71; background-image: linear-gradient(135deg, rgba(255,255,255,.08), transparent 70%); }
-    .sexual-violence .report-art::before { border-color: rgba(231, 240, 245, .28); width: 200px; height: 200px; top: -8px; right: -52px; }
-    .sexual-violence .report-art::after { border-color: rgba(231, 240, 245, .22); width: 135px; height: 135px; top: 24px; right: -10px; }
-    .sexual-violence .featured-label { color: #2f4d5c; }
-    .sexual-violence .report-description { color: #415d6a; }
-    .sexual-violence .tag { border-color: rgba(47, 77, 92, .20); color: #2f4d5c; }
+    .sexual-violence { --card-bg: var(--sexual-violence-bg); --card-art: var(--sexual-violence-art); --card-accent: var(--sexual-violence-accent); --card-copy: var(--sexual-violence-copy); --card-tag: var(--sexual-violence-tag); --card-tag-border: var(--sexual-violence-tag-border); --card-ring: var(--sexual-violence-ring); }
+    .sexual-violence .report-art::before { width: 200px; height: 200px; top: -8px; right: -52px; }
+    .sexual-violence .report-art::after { width: 135px; height: 135px; top: 24px; right: -10px; }
     .sexual-violence .art-number { font-size: 28px; letter-spacing: -.05em; }
     .sexual-violence .art-caption { max-width: 270px; }
 
-    .spacex { background: #eaf1f7; }
-    .spacex .report-art { background: #355e80; background-image: linear-gradient(135deg, rgba(255,255,255,.1), transparent 70%); }
-    .spacex .report-art::before { border-color: rgba(235, 244, 250, .3); width: 200px; height: 200px; top: -8px; right: -52px; }
-    .spacex .report-art::after { border-color: rgba(235, 244, 250, .22); width: 135px; height: 135px; top: 24px; right: -10px; }
-    .spacex .featured-label { color: #31556f; }
-    .spacex .report-description { color: #465c6d; }
-    .spacex .tag { border-color: rgba(49, 85, 111, .22); color: #31556f; }
+    .spacex { --card-bg: var(--spacex-bg); --card-art: var(--spacex-art); --card-accent: var(--spacex-accent); --card-copy: var(--spacex-copy); --card-tag: var(--spacex-tag); --card-tag-border: var(--spacex-tag-border); --card-ring: var(--spacex-ring); }
+    .spacex .report-art::before { width: 200px; height: 200px; top: -8px; right: -52px; }
+    .spacex .report-art::after { width: 135px; height: 135px; top: 24px; right: -10px; }
     .spacex .art-number { font-size: 32px; letter-spacing: -.055em; }
     .spacex .art-caption { max-width: 270px; }
-    .affordability { background: #f1f2e8; }
-    .affordability .report-art { background: #4a6e5d; background-image: linear-gradient(135deg, rgba(255,255,255,.1), transparent 70%); }
-    .affordability .report-art::before { border-color: rgba(235, 244, 235, .3); width: 200px; height: 200px; top: -8px; right: -52px; }
-    .affordability .report-art::after { border-color: rgba(235, 244, 235, .22); width: 135px; height: 135px; top: 24px; right: -10px; }
-    .affordability .featured-label { color: #345844; }
-    .affordability .report-description { color: #4c6155; }
-    .affordability .tag { border-color: rgba(52, 88, 68, .22); color: #345844; }
+    .affordability { --card-bg: var(--affordability-bg); --card-art: var(--affordability-art); --card-accent: var(--affordability-accent); --card-copy: var(--affordability-copy); --card-tag: var(--affordability-tag); --card-tag-border: var(--affordability-tag-border); --card-ring: var(--affordability-ring); }
+    .affordability .report-art::before { width: 200px; height: 200px; top: -8px; right: -52px; }
+    .affordability .report-art::after { width: 135px; height: 135px; top: 24px; right: -10px; }
     .affordability .art-number { font-size: 32px; letter-spacing: -.055em; }
     .affordability .art-caption { max-width: 270px; }
-    .ev-chargers { background: #e8f1f3; }
-    .ev-chargers .report-art { background: #286274; background-image: linear-gradient(135deg, rgba(255,255,255,.1), transparent 70%); }
-    .ev-chargers .report-art::before { border-color: rgba(235, 246, 248, .3); width: 200px; height: 200px; top: -8px; right: -52px; }
-    .ev-chargers .report-art::after { border-color: rgba(235, 246, 248, .22); width: 135px; height: 135px; top: 24px; right: -10px; }
-    .ev-chargers .featured-label { color: #285766; }
-    .ev-chargers .report-description { color: #455e63; }
-    .ev-chargers .tag { border-color: rgba(40, 87, 102, .22); color: #285766; }
+    .ev-chargers { --card-bg: var(--ev-chargers-bg); --card-art: var(--ev-chargers-art); --card-accent: var(--ev-chargers-accent); --card-copy: var(--ev-chargers-copy); --card-tag: var(--ev-chargers-tag); --card-tag-border: var(--ev-chargers-tag-border); --card-ring: var(--ev-chargers-ring); }
+    .ev-chargers .report-art::before { width: 200px; height: 200px; top: -8px; right: -52px; }
+    .ev-chargers .report-art::after { width: 135px; height: 135px; top: 24px; right: -10px; }
     .ev-chargers .art-number { font-size: 32px; letter-spacing: -.055em; }
     .ev-chargers .art-caption { max-width: 270px; }
-    .featured-label.is-new { padding: 6px 10px; border-radius: 999px; background: var(--pink); color: #fff; letter-spacing: .09em; }
-    .featured-label.is-new [aria-hidden="true"] { color: #ffe3a4; }
+    .featured-label.is-new { padding: 6px 10px; border-radius: 999px; background: var(--button-bg); color: var(--button-text); letter-spacing: .09em; }
+    .featured-label.is-new [aria-hidden="true"] { color: var(--highlight); }
     .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 30px 36px; border-top: 1px solid var(--line); }
     .more h2 { margin: 0; font-size: 23px; font-weight: 600; line-height: 1.25; letter-spacing: -.05em; }
     .more p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
@@ -153,10 +187,10 @@
     .about { padding-block: 34px 72px; border-top: 1px solid var(--line); }
     .about-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 48px; align-items: start; }
     .about h2 { max-width: 560px; margin-bottom: 17px; font-size: clamp(27px, 4vw, 38px); font-weight: 600; line-height: 1.15; letter-spacing: -.06em; }
-    .about-copy { max-width: 650px; margin-bottom: 13px; color: #59675f; font-size: 13px; line-height: 1.8; }
+    .about-copy { max-width: 650px; margin-bottom: 13px; color: var(--body-copy); font-size: 13px; line-height: 1.8; }
     .about-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 22px; font-size: 12px; font-weight: 700; }
     .about-contact a:not(.nav-button) { color: var(--green); text-underline-offset: 3px; }
-    .about-side { padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255, 255, 255, .62); }
+    .about-side { padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-bg); }
     .about-side h3 { margin-bottom: 13px; font-size: 14px; font-weight: 700; }
     .about-side .tags { margin: 0; }
     .about-side .tag { padding: 6px 9px; font-size: 10px; }
@@ -192,7 +226,162 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #11181c;
+        --surface: #1a2529;
+        --ink: #e8eef0;
+        --muted: #b5c3c2;
+        --green: #9ec7aa;
+        --deep-green: #b2d8be;
+        --pink: #e5a0b7;
+        --pale-pink: #32232b;
+        --pale-green: #202d28;
+        --line: #38474b;
+        --white: #ffffff;
+        --body-copy: #c4cfcc;
+        --card-copy-default: #c1ccc8;
+        --tag-ink: #c9d8d1;
+        --tag-border-default: rgba(201, 216, 209, .28);
+        --card-border: rgba(220, 236, 226, .12);
+        --card-shadow: rgba(0, 0, 0, .35);
+        --art-default: #365644;
+        --art-label: #f1dce4;
+        --art-copy: #f2f4f0;
+        --art-ring: rgba(231, 240, 235, .24);
+        --art-glow: rgba(255, 255, 255, .08);
+        --panel-bg: rgba(26, 37, 41, .85);
+        --highlight: #ffe3a4;
+        --button-bg: #365644;
+        --button-hover: #496b58;
+        --button-text: #ffffff;
+        --sans: "Manrope", "Avenir Next", Avenir, "Segoe UI", sans-serif;
+        --predictive-bg: #30202a;
+        --predictive-art: #744257;
+        --predictive-accent: #f0b4c6;
+        --predictive-copy: #e1c4ce;
+        --predictive-tag: #f0b4c6;
+        --predictive-tag-border: rgba(240, 180, 198, .28);
+        --predictive-ring: rgba(255, 228, 237, .25);
+        --sexual-violence-bg: #1d2c32;
+        --sexual-violence-art: #31586b;
+        --sexual-violence-accent: #a9cede;
+        --sexual-violence-copy: #c4d5dc;
+        --sexual-violence-tag: #a9cede;
+        --sexual-violence-tag-border: rgba(169, 206, 222, .3);
+        --sexual-violence-ring: rgba(231, 240, 245, .24);
+        --spacex-bg: #1d2a35;
+        --spacex-art: #315574;
+        --spacex-accent: #a8c9e2;
+        --spacex-copy: #c0d0dc;
+        --spacex-tag: #a8c9e2;
+        --spacex-tag-border: rgba(168, 201, 226, .3);
+        --spacex-ring: rgba(235, 244, 250, .24);
+        --affordability-bg: #2b3023;
+        --affordability-art: #405e4b;
+        --affordability-accent: #bdd8bb;
+        --affordability-copy: #ccd8c9;
+        --affordability-tag: #bdd8bb;
+        --affordability-tag-border: rgba(189, 216, 187, .3);
+        --affordability-ring: rgba(235, 244, 235, .24);
+        --ev-chargers-bg: #1b2c31;
+        --ev-chargers-art: #22596a;
+        --ev-chargers-accent: #aad7df;
+        --ev-chargers-copy: #c3d6d9;
+        --ev-chargers-tag: #aad7df;
+        --ev-chargers-tag-border: rgba(170, 215, 223, .3);
+        --ev-chargers-ring: rgba(235, 246, 248, .24);
+      }
+    }
   </style>
+  <!-- json-ld:start -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "@id": "https://aloysius109.github.io/#person",
+          "name": "Kathryn Hopkins",
+          "jobTitle": "Data Scientist",
+          "url": "https://aloysius109.github.io/",
+          "sameAs": [
+            "https://github.com/aloysius109"
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://aloysius109.github.io/#reports",
+          "name": "Selected reports by Kathryn Hopkins",
+          "numberOfItems": 6,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Asylum in perspective",
+                "description": "A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can tell us.",
+                "url": "https://aloysius109.github.io/asylum-tracker/asylum/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Predictive Analytics",
+                "description": "Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion using historical UNHCR data.",
+                "url": "https://aloysius109.github.io/predictive-analytics/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Sexual violence in perspective",
+                "description": "Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.",
+                "url": "https://aloysius109.github.io/sexual-violence-report/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "SpaceX Falcon 9 landing prediction",
+                "description": "Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches.",
+                "url": "https://aloysius109.github.io/data-science-projects/spacex/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "The affordability squeeze",
+                "description": "House prices still take years of local earnings to reach. Explore how ratios changed across 318 areas from 1997 to 2025 and where costs remain furthest out of reach.",
+                "url": "https://aloysius109.github.io/housing-affordability-report/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Where the UK plugs in",
+                "description": "Explore how public EV charger provision varies by region, power and local authority, using the latest Department for Transport data.",
+                "url": "https://aloysius109.github.io/ev-charger-report/"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+  <!-- json-ld:end -->
 </head>
 <body>
   <header class="shell site-header">
@@ -412,7 +601,9 @@
       <div class="footer-links">
         <a href="cv/">Curriculum vitae ↗</a>
         <a href="https://github.com/aloysius109">GitHub profile ↗</a>
+        <a href="feed.xml">Subscribe via Atom ↗</a>
       </div>
+      <p>Privacy-friendly GoatCounter analytics; no cookies, consent banner or personal data.</p>
     </div>
   </footer>
   <!-- Add ISO publication/update dates and a default card label; the latest report is promoted automatically. -->
@@ -443,5 +634,7 @@
       });
     })();
   </script>
+  <script data-goatcounter="https://aloysius109.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

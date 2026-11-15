@@ -1,22 +1,24 @@
 # Homepage theme template
 
-The reusable palette and typography tokens for the homepage are in [`theme.css`](theme.css). The template reflects the current cool pale-blue page background, with sage, blush and dusty-blue report accents.
+The reusable palette and typography tokens for the homepage are in [`theme.css`](theme.css). The page follows the operating system's light/dark preference; light mode is the fallback when no preference is set. The palette uses a cool pale-blue light background and sage, blush and dusty-blue report accents.
 
 ## Colours
 
-| Role | Colour |
-| --- | --- |
-| Cool pale-blue background | `#f4f8fb` |
-| White surface | `#ffffff` |
-| Main text | `#26352e` |
-| Muted text | `#68756e` |
-| Sage card | `#edf2ec` |
-| Sage artwork | `#496b58` |
-| Blush card | `#f8e9ed` |
-| Blush artwork | `#a9677d` |
-| Dusty blue card | `#edf5f8` |
-| Dusty blue artwork | `#365d71` |
-| Cool fine borders | `#dce6eb` |
+| Role | Light | Dark |
+| --- | --- | --- |
+| Page background | `#f4f8fb` | `#11181c` |
+| Surface | `#ffffff` | `#1a2529` |
+| Main text | `#26352e` | `#e8eef0` |
+| Muted text | `#68756e` | `#b5c3c2` |
+| Sage card | `#edf2ec` | `#202d28` |
+| Sage artwork | `#496b58` | `#365644` |
+| Blush card | `#f8e9ed` | `#32232b` |
+| Blush artwork | `#a65370` | `#744257` |
+| Dusty blue card | `#edf5f8` | `#1d2c32` |
+| Dusty blue artwork | `#365d71` | `#31586b` |
+| Borders | `#dce6eb` | `#38474b` |
+
+The homepage, CV and 404 page each define matching theme tokens and switch through `prefers-color-scheme`; they use no JavaScript toggle. The dark overrides are in place before content paints, and the CV's print stylesheet explicitly restores the light palette for PDF output.
 
 ## Typography
 

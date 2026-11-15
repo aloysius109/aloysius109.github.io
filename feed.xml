@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://aloysius109.github.io/feed.xml</id>
+  <title>Kathryn Hopkins — Data, in context</title>
+  <subtitle>New reports and research publications by Kathryn Hopkins.</subtitle>
+  <updated>2026-11-13T00:00:00Z</updated>
+  <link rel="self" href="https://aloysius109.github.io/feed.xml" />
+  <link rel="alternate" href="https://aloysius109.github.io/" />
+  <author>
+    <name>Kathryn Hopkins</name>
+    <uri>https://aloysius109.github.io/</uri>
+  </author>
+  <entry>
+    <id>https://aloysius109.github.io/asylum-tracker/asylum/</id>
+    <title>Asylum in perspective</title>
+    <summary>A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can tell us.</summary>
+    <published>2026-11-05T00:00:00Z</published>
+    <updated>2026-11-06T00:00:00Z</updated>
+    <link href="https://aloysius109.github.io/asylum-tracker/asylum/" rel="alternate" />
+    <category term="Global analysis" />
+    <category term="Country comparisons" />
+    <category term="UNHCR data" />
+    <category term="2000–2025 edition" />
+  </entry>
+  <entry>
+    <id>https://aloysius109.github.io/predictive-analytics/</id>
+    <title>Predictive Analytics</title>
+    <summary>Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion using historical UNHCR data.</summary>
+    <published>2026-11-07T00:00:00Z</published>
+    <updated>2026-11-13T00:00:00Z</updated>
+    <link href="https://aloysius109.github.io/predictive-analytics/" rel="alternate" />
+    <category term="Interactive" />
+    <category term="Decision outcomes" />
+    <category term="Scenario explorer" />
+    <category term="UNHCR data" />
+  </entry>
+  <entry>
+    <id>https://aloysius109.github.io/sexual-violence-report/</id>
+    <title>Sexual violence in perspective</title>
+    <summary>Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.</summary>
+    <published>2026-11-06T00:00:00Z</published>
+    <updated>2026-11-06T00:00:00Z</updated>
+    <link href="https://aloysius109.github.io/sexual-violence-report/" rel="alternate" />
+    <category term="Worldwide evidence" />
+    <category term="UK detail" />
+    <category term="Power &amp; prevalence" />
+    <category term="Methods &amp; sources" />
+  </entry>
+  <entry>
+    <id>https://aloysius109.github.io/data-science-projects/spacex/</id>
+    <title>SpaceX Falcon 9 landing prediction</title>
+    <summary>Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches.</summary>
+    <published>2026-11-13T00:00:00Z</published>
+    <updated>2026-11-13T00:00:00Z</updated>
+    <link href="https://aloysius109.github.io/data-science-projects/spacex/" rel="alternate" />
+    <category term="90 launches" />
+    <category term="Landing outcomes" />
+    <category term="Model comparison" />
+    <category term="SpaceX" />
+  </entry>
+  <entry>
+    <id>https://aloysius109.github.io/housing-affordability-report/</id>
+    <title>The affordability squeeze</title>
+    <summary>House prices still take years of local earnings to reach. Explore how ratios changed across 318 areas from 1997 to 2025 and where costs remain furthest out of reach.</summary>
+    <published>2026-11-13T00:00:00Z</published>
+    <updated>2026-11-13T00:00:00Z</updated>
+    <link href="https://aloysius109.github.io/housing-affordability-report/" rel="alternate" />
+    <category term="ONS data" />
+    <category term="England and Wales" />
+    <category term="1997-2025" />
+    <category term="Local ratios" />
+  </entry>
+  <entry>
+    <id>https://aloysius109.github.io/ev-charger-report/</id>
+    <title>Where the UK plugs in</title>
+    <summary>Explore how public EV charger provision varies by region, power and local authority, using the latest Department for Transport data.</summary>
+    <published>2026-11-13T00:00:00Z</published>
+    <updated>2026-11-13T00:00:00Z</updated>
+    <link href="https://aloysius109.github.io/ev-charger-report/" rel="alternate" />
+    <category term="EV charging" />
+    <category term="361 local authorities" />
+    <category term="Regional coverage" />
+    <category term="DfT data" />
+  </entry>
+</feed>

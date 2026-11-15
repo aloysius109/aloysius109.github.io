@@ -4,24 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f4f8fb">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f8fb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#11181c">
   <title>Page not found — Kathryn Hopkins</title>
   <link rel="icon" type="image/svg+xml" href="https://aloysius109.github.io/favicon.svg">
   <link rel="icon" href="https://aloysius109.github.io/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="https://aloysius109.github.io/apple-touch-icon.png">
   <style>
-    :root { color-scheme: light; --paper: #f4f8fb; --ink: #26352e; --muted: #68756e; --green: #496b58; --pink: #a65370; --line: #dce6eb; }
+    :root {
+      color-scheme: light dark;
+      --paper: #f4f8fb;
+      --ink: #26352e;
+      --muted: #68756e;
+      --green: #496b58;
+      --pink: #a65370;
+      --line: #dce6eb;
+      --white: #ffffff;
+      --button-bg: #496b58;
+      --button-text: #ffffff;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
     * { box-sizing: border-box; }
-    body { min-height: 100vh; display: grid; place-items: center; margin: 0; background: var(--paper); color: var(--ink); font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif; }
+    body { min-height: 100vh; display: grid; place-items: center; margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
     main { width: min(720px, calc(100% - 48px)); padding-block: 72px; }
     .identity { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; font-size: 14px; font-weight: 700; }
-    .monogram { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: white; }
+    .monogram { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--button-bg); color: var(--button-text); }
     .eyebrow { margin: 72px 0 16px; color: var(--pink); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
     h1 { margin: 0 0 18px; font-size: clamp(42px, 8vw, 72px); font-weight: 600; line-height: 1.02; letter-spacing: -.07em; }
     p { max-width: 560px; color: var(--muted); font-size: 16px; line-height: 1.8; }
-    a.return { display: inline-block; margin-top: 12px; padding: 12px 16px; border-radius: 3px; background: var(--green); color: white; font-size: 14px; font-weight: 700; text-decoration: none; }
+    a.return { display: inline-block; margin-top: 12px; padding: 12px 16px; border-radius: 3px; background: var(--button-bg); color: var(--button-text); font-size: 14px; font-weight: 700; text-decoration: none; }
     a:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; }
     .rule { margin-top: 70px; border-top: 1px solid var(--line); }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #11181c;
+        --ink: #e8eef0;
+        --muted: #b5c3c2;
+        --green: #9ec7aa;
+        --pink: #e5a0b7;
+        --line: #38474b;
+        --white: #ffffff;
+        --button-bg: #365644;
+        --button-text: #ffffff;
+        --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      }
+    }
   </style>
 </head>
 <body>
@@ -33,5 +60,7 @@
     <a class="return" href="/">Browse the reports</a>
     <div class="rule" aria-hidden="true"></div>
   </main>
+  <script data-goatcounter="https://aloysius109.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
