@@ -95,6 +95,13 @@
       --ev-chargers-tag: #285766;
       --ev-chargers-tag-border: rgba(40, 87, 102, .22);
       --ev-chargers-ring: rgba(235, 246, 248, .25);
+      --uk-asylum-bg: #e8f1ee;
+      --uk-asylum-art: #247367;
+      --uk-asylum-accent: #28685b;
+      --uk-asylum-copy: #455f59;
+      --uk-asylum-tag: #28685b;
+      --uk-asylum-tag-border: rgba(40, 104, 91, .22);
+      --uk-asylum-ring: rgba(235, 246, 241, .25);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -178,6 +185,11 @@
     .ev-chargers .report-art::after { width: 135px; height: 135px; top: 24px; right: -10px; }
     .ev-chargers .art-number { font-size: 32px; letter-spacing: -.055em; }
     .ev-chargers .art-caption { max-width: 270px; }
+    .uk-asylum { --card-bg: var(--uk-asylum-bg); --card-art: var(--uk-asylum-art); --card-accent: var(--uk-asylum-accent); --card-copy: var(--uk-asylum-copy); --card-tag: var(--uk-asylum-tag); --card-tag-border: var(--uk-asylum-tag-border); --card-ring: var(--uk-asylum-ring); }
+    .uk-asylum .report-art::before { width: 200px; height: 200px; top: -8px; right: -52px; }
+    .uk-asylum .report-art::after { width: 135px; height: 135px; top: 24px; right: -10px; }
+    .uk-asylum .art-number { font-size: 32px; letter-spacing: -.055em; }
+    .uk-asylum .art-caption { max-width: 270px; }
     .featured-label.is-new { padding: 6px 10px; border-radius: 999px; background: var(--button-bg); color: var(--button-text); letter-spacing: .09em; }
     .featured-label.is-new [aria-hidden="true"] { color: var(--highlight); }
     .more { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: start; padding-block: 30px 36px; border-top: 1px solid var(--line); }
@@ -291,6 +303,13 @@
         --ev-chargers-tag: #aad7df;
         --ev-chargers-tag-border: rgba(170, 215, 223, .3);
         --ev-chargers-ring: rgba(235, 246, 248, .24);
+        --uk-asylum-bg: #1d302d;
+        --uk-asylum-art: #205e55;
+        --uk-asylum-accent: #a9d8cb;
+        --uk-asylum-copy: #c3d9d2;
+        --uk-asylum-tag: #a9d8cb;
+        --uk-asylum-tag-border: rgba(169, 216, 203, .3);
+        --uk-asylum-ring: rgba(235, 246, 241, .24);
       }
     }
   </style>
@@ -314,11 +333,21 @@
           "@type": "ItemList",
           "@id": "https://aloysius109.github.io/#reports",
           "name": "Selected reports by Kathryn Hopkins",
-          "numberOfItems": 6,
+          "numberOfItems": 7,
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "UK asylum, in detail",
+                "description": "A data-led account of who claims asylum in the UK, what happens next, and how decisions, waiting times and support have changed.",
+                "url": "https://aloysius109.github.io/uk-asylum/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
               "item": {
                 "@type": "CreativeWork",
                 "name": "Asylum in perspective",
@@ -328,7 +357,7 @@
             },
             {
               "@type": "ListItem",
-              "position": 2,
+              "position": 3,
               "item": {
                 "@type": "CreativeWork",
                 "name": "Predictive Analytics",
@@ -338,7 +367,7 @@
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 4,
               "item": {
                 "@type": "CreativeWork",
                 "name": "Sexual violence in perspective",
@@ -348,7 +377,7 @@
             },
             {
               "@type": "ListItem",
-              "position": 4,
+              "position": 5,
               "item": {
                 "@type": "CreativeWork",
                 "name": "SpaceX Falcon 9 landing prediction",
@@ -358,7 +387,7 @@
             },
             {
               "@type": "ListItem",
-              "position": 5,
+              "position": 6,
               "item": {
                 "@type": "CreativeWork",
                 "name": "The affordability squeeze",
@@ -368,7 +397,7 @@
             },
             {
               "@type": "ListItem",
-              "position": 6,
+              "position": 7,
               "item": {
                 "@type": "CreativeWork",
                 "name": "Where the UK plugs in",
@@ -405,8 +434,8 @@
         <h1 id="page-title">Data, <em>in context.</em></h1>
         <p class="hero-copy">A growing collection of reports, analysis and interactive data stories. Explore the work, follow the evidence and return for what comes next.</p>
       </div>
-      <div class="collection-count" aria-label="Six published reports">
-        <span class="count-number">06</span>
+      <div class="collection-count" aria-label="Seven published reports">
+        <span class="count-number">07</span>
         <span class="count-caption">published reports<br>More to come</span>
       </div>
     </section>
@@ -452,6 +481,28 @@
       </div>
 
       <div class="report-grid">
+        <a class="report-card uk-asylum" data-published="2026-11-18" data-updated="2026-11-18" href="https://aloysius109.github.io/uk-asylum/" aria-label="Read UK asylum, in detail">
+          <div class="report-main">
+            <span class="featured-label" data-default-label="UK asylum report"><span aria-hidden="true">◆</span><span class="report-label-text">UK asylum report</span></span>
+            <h3 class="report-title">UK asylum, in detail</h3>
+            <p class="report-description">A data-led account of who claims asylum in the UK, what happens next, and how decisions, waiting times and support have changed.</p>
+            <p class="report-dates"><span>Published <time datetime="2026-11-18">18 Nov 2026</time></span><span>Updated <time datetime="2026-11-18">18 Nov 2026</time></span></p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">Home Office data</span>
+              <span class="tag">UK detail</span>
+              <span class="tag">Year ending June 2026</span>
+              <span class="tag">Claims &amp; decisions</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Year ending June 2026</span>
+              <p class="art-number">38.1%</p>
+              <p class="art-caption">published initial grant rate for main applicants.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
         <a class="report-card" data-published="2026-11-05" data-updated="2026-11-06" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
           <div class="report-main">
             <span class="featured-label" data-default-label="Featured report"><span aria-hidden="true">◆</span><span class="report-label-text">Featured report</span></span>

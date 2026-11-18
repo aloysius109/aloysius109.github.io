@@ -3,13 +3,25 @@
   <id>https://aloysius109.github.io/feed.xml</id>
   <title>Kathryn Hopkins — Data, in context</title>
   <subtitle>New reports and research publications by Kathryn Hopkins.</subtitle>
-  <updated>2026-11-13T00:00:00Z</updated>
+  <updated>2026-11-18T00:00:00Z</updated>
   <link rel="self" href="https://aloysius109.github.io/feed.xml" />
   <link rel="alternate" href="https://aloysius109.github.io/" />
   <author>
     <name>Kathryn Hopkins</name>
     <uri>https://aloysius109.github.io/</uri>
   </author>
+  <entry>
+    <id>https://aloysius109.github.io/uk-asylum/</id>
+    <title>UK asylum, in detail</title>
+    <summary>A data-led account of who claims asylum in the UK, what happens next, and how decisions, waiting times and support have changed.</summary>
+    <published>2026-11-18T00:00:00Z</published>
+    <updated>2026-11-18T00:00:00Z</updated>
+    <link href="https://aloysius109.github.io/uk-asylum/" rel="alternate" />
+    <category term="Home Office data" />
+    <category term="UK detail" />
+    <category term="Year ending June 2026" />
+    <category term="Claims &amp; decisions" />
+  </entry>
   <entry>
     <id>https://aloysius109.github.io/asylum-tracker/asylum/</id>
     <title>Asylum in perspective</title>
