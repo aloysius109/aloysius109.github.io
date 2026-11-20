@@ -67,7 +67,9 @@
     .profile-copy { margin: 0; color: var(--copy); font-size: 12px; }
     .expertise { display: flex; flex-wrap: wrap; gap: 7px; }
     .expertise span { padding: 6px 9px; border: 1px solid var(--tag-border); border-radius: 2px; color: var(--tag-ink); font-size: 10px; }
+    .role { page-break-inside: avoid; }
     .role + .role { margin-top: 21px; }
+    #moj-role, #skills-section { page-break-before: always; }
     .role-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; }
     .employer { margin: 2px 0 0; color: var(--muted); font-size: 11px; font-weight: 600; }
     .date { color: var(--muted); font-size: 10px; white-space: nowrap; }
@@ -161,20 +163,20 @@
     <header class="cv-intro">
       <p class="eyebrow">Curriculum vitae</p>
       <h1>Kathryn Hopkins, PhD</h1>
-      <p class="strapline">Data &amp; Analytics Leadership · Business Intelligence · Statistical Evaluation · Predictive Analytics · Data Science</p>
+      <p class="strapline">Data &amp; Analytics Leader · Data Scientist · Statistical Evaluation &amp; Predictive Modelling</p>
       <p class="cv-contact"><a href="https://github.com/aloysius109">GitHub profile</a> · <a href="https://aloysius109.github.io/">Portfolio and selected reports</a></p>
       <!-- Application-only email is added by the local PDF builder. -->
     </header>
 
     <section class="cv-section" aria-labelledby="profile-title">
       <h2 id="profile-title">Profile</h2>
-      <p class="profile-copy">Senior data and analytics professional with experience leading teams, developing enterprise data platforms, and delivering evidence for operational and policy decisions. Currently Head of Business Intelligence at Salutem Care and Education, leading development of an Azure-hosted Databricks data platform for trusted information, governance and self-service analytics. Previous roles across the Home Office, NHS Digital, HMRC and the Ministry of Justice combine analytical leadership with hands-on expertise in impact evaluation, predictive modelling and performance reporting. PhD-qualified, with a focus on communicating complex findings clearly to technical, operational and senior stakeholders.</p>
+      <p class="profile-copy">Senior data and analytics professional with experience leading teams, developing enterprise data platforms, delivering accurate and detailed evidence for operational and policy decisions, and building predictive models and visualisations. Currently Head of Business Intelligence at Salutem Care and Education, a leading provider of care for people with disabilities and education at regulated special schools, leading development of an Azure-hosted Databricks enterprise data lakehouse to strengthen data visibility, governance and self-service analytics. Previous roles across the Home Office, NHS Digital, HMRC and the Ministry of Justice combine analytical leadership with hands-on expertise in impact evaluation, predictive modelling and performance reporting. Communicates complex findings clearly to technical, operational and senior stakeholders. Publishes independent data reports built in Python and Quarto from public data only (<a href="#work-title">selected publications</a>).</p>
     </section>
 
     <section class="cv-section" aria-labelledby="expertise-title">
       <h2 id="expertise-title">Core expertise</h2>
       <div class="expertise">
-        <span>Analytical leadership</span> <span>Data platforms &amp; governance</span> <span>Impact evaluation</span> <span>Predictive modelling</span> <span>Operational performance</span> <span>Forecasting</span> <span>Accessible visualisation</span> <span>Statistical reporting</span> <span>Data protection</span>
+        <span>Analytical leadership and stakeholder engagement</span> <span>Enterprise data platforms and governance</span> <span>Impact evaluation and predictive modelling</span> <span>Operational performance and forecasting</span> <span>Clear, accessible data visualisation</span> <span>Regulated statistical reporting</span> <span>Data protection</span>
       </div>
     </section>
 
@@ -182,46 +184,51 @@
       <h2 id="experience-title">Experience</h2>
       <div>
         <article class="role">
-          <div class="role-heading"><div><h3>Head of Business Intelligence</h3><p class="employer">Salutem Care and Education</p></div><span class="date">July 2024–present</span></div>
+          <div class="role-heading"><div><h3>Head of Business Intelligence</h3><p class="employer">Salutem Care and Education · Windsor, UK / remote</p></div><span class="date">July 2024–present</span></div>
           <ul>
-            <li>Lead a team building an Azure-hosted Databricks Lakehouse and governed operational data model to improve trusted reporting and self-service analysis.</li>
-            <li>Integrate data from care, education and business systems with public APIs and government sources; develop daily and historical views across the operating model.</li>
-            <li>Establish reporting and visualisation standards, with automated data-load alerts and controls designed for sensitive information.</li>
+            <li>Lead a team of four in Azure DevOps to build an Azure-hosted Databricks lakehouse and governed operational model, with automated AI agents for reliable self-service access.</li>
+            <li>Join seven business systems with government data and CQC and Ofsted APIs in a daily-refreshed model, linking people, locations and services for daily and historical business-wide insight.</li>
+            <li>Build UK GDPR and data-minimisation safeguards for sensitive records; automate data alerts and set reporting and visualisation standards.</li>
           </ul>
         </article>
         <article class="role">
-          <div class="role-heading"><div><h3>Data Scientist</h3><p class="employer">UK Home Office</p></div><span class="date">June 2022–June 2024</span></div>
+          <div class="role-heading"><div><h3>Data Scientist</h3><p class="employer">UK Home Office · London, UK / remote</p></div><span class="date">June 2022–June 2024</span></div>
           <ul>
-            <li>Designed a near-live predictive regression model of asylum processing to evaluate the Asylum Transformation Programme and quantify changes under different operating conditions.</li>
-            <li>Built Power BI dashboards tracking application and decision volumes, backlog measures and processing productivity.</li>
-            <li>Analysed international asylum applications, decisions and outcomes using UNHCR and EU data; developed an interactive tool to explore historical decision patterns.</li>
+            <li>Built a near-live regression model of asylum processing to evaluate the Transformation Programme, quantify productivity changes under different staffing and prioritisation conditions, and assess policy effects.</li>
+            <li>Delivered near-real-time Power BI dashboards tracking applications, decisions, backlog and processing productivity.</li>
+            <li>Used UNHCR and EU data to estimate asylum processing productivity, backlogs, grant rates and closure rates across approximately 160 countries.</li>
+            <li>Built an <a href="https://aloysius109.github.io/predictive-analytics/">interactive asylum-outcome model</a> predicting outcome probabilities for thousands of country pairs, alongside regression models of grant outcomes by applicant characteristics.</li>
           </ul>
         </article>
         <article class="role">
-          <div class="role-heading"><div><h3>Principal Information Analyst</h3><p class="employer">NHS Digital</p></div><span class="date">November 2021–May 2022</span></div>
+          <div class="role-heading"><div><h3>Principal Information Analyst</h3><p class="employer">UK National Health Service (NHS) Digital · Leeds, UK</p></div><span class="date">November 2021–May 2022</span></div>
           <ul>
-            <li>Converted Excel-based registry reporting into a published Power BI dashboard, maintaining accuracy, completeness and confidentiality.</li>
-            <li>Worked as Agile Product Manager across national audit and medical data collections, supporting formal statistical publications.</li>
+            <li>Converted the Cosmetic Implant Registry’s Excel reporting into a published Power BI dashboard, maintaining accurate, current and complete data while protecting confidentiality.</li>
+            <li>Worked as Agile Product Manager across national audits and medical and regulatory data collections, creating web content for formal government statistical publications.</li>
+            <li>Managed analytical workflows and publication of population-health, treatment-outcome, clinician and hospital data to UK statistical release standards.</li>
           </ul>
         </article>
         <article class="role">
-          <div class="role-heading"><div><h3>Senior Operations Analyst</h3><p class="employer">HM Revenue &amp; Customs</p></div><span class="date">September 2016–September 2021</span></div>
+          <div class="role-heading"><div><h3>Senior Operations Analyst</h3><p class="employer">His Majesty’s Revenue &amp; Customs (HMRC) · London, UK</p></div><span class="date">September 2016–September 2021</span></div>
           <ul>
-            <li>Led 15 analysts delivering business analysis for Real Time Information, HMRC’s live pay and taxation database.</li>
-            <li>Designed a difference-in-differences evaluation of Universal Credit and analysed pension participation, data quality and operational performance.</li>
+            <li>Led 15 analysts defining analytical requirements for Real Time Information, HMRC’s live pay and taxation database, working with stakeholders including the Department for Work and Pensions.</li>
+            <li>Designed a difference-in-differences evaluation of Universal Credit, comparing family-income changes for people receiving Universal Credit and legacy benefits.</li>
+            <li>Worked with The Pensions Regulator on pension participation, and investigated duplicate National Insurance numbers and late employer submissions to quantify impacts on welfare calculations.</li>
+          </ul>
+        </article>
+        <article class="role" id="moj-role">
+          <div class="role-heading"><div><h3>Principal Social Researcher</h3><p class="employer">Ministry of Justice (MoJ) · London, UK</p></div><span class="date">July 2008–September 2016</span></div>
+          <ul>
+            <li>Developed and published evidence from Surveying Prisoner Crime Reduction, a longitudinal cohort study linking prisoner experiences with post-release outcomes.</li>
+            <li>Evaluated Enhanced Thinking Skills and the Sex Offender Treatment Programme using propensity score matching and regression to compare reconviction and other outcomes.</li>
+            <li>Built and published sentencing models examining offence type, demographics and criminal history, including associations with gender and ethnicity; forecast court-fines income with uncertainty and policy effects.</li>
           </ul>
         </article>
         <article class="role">
-          <div class="role-heading"><div><h3>Principal Social Researcher</h3><p class="employer">Ministry of Justice</p></div><span class="date">July 2008–September 2016</span></div>
+          <div class="role-heading"><div><h3>Operations Analyst</h3><p class="employer">Home Office (UK Border Agency) · London, UK</p></div><span class="date">February 2006–July 2008</span></div>
           <ul>
-            <li>Developed evidence from a longitudinal prisoner cohort study and evaluated rehabilitation programmes using matched comparison groups.</li>
-            <li>Built regression models of sentencing outcomes and a quarterly court-fines income forecast incorporating uncertainty and policy change.</li>
-          </ul>
-        </article>
-        <article class="role">
-          <div class="role-heading"><div><h3>Operations Analyst</h3><p class="employer">Home Office · UK Border Agency</p></div><span class="date">February 2006–July 2008</span></div>
-          <ul>
-            <li>Produced migration time-series forecasts and modelled operational demand for immigration policy and planning.</li>
+            <li>Forecast migration volumes for Poland and Romania’s EU accession and modelled deportation operations to identify efficiency improvements.</li>
+            <li>Defined analytical requirements for the Points-Based Immigration System, modelling application volumes under draft policy proposals.</li>
           </ul>
         </article>
       </div>
@@ -243,25 +250,22 @@
     <section class="cv-section" aria-labelledby="education-title">
       <h2 id="education-title">Education &amp; certification</h2>
       <ul class="education-list">
-        <li><strong>IBM-certified Data Scientist</strong> · 2022</li>
-        <li><strong>PhD, Environmental Science</strong> · University of Liverpool, 2006</li>
-        <li><strong>MRes, Fish Biology (Distinction)</strong> · University of Plymouth, 2003</li>
-        <li><strong>MA, Linguistics (Merit)</strong> · University of Leicester, 2002</li>
+        <li><strong>IBM Data Science Professional Certificate (Coursera)</strong> · 2022</li>
         <li><strong>LLM, Qualifying Law (Merit)</strong> · Liverpool John Moores University, 2020</li>
-        <li><strong>BSc (Open), Mathematics &amp; Statistics</strong> · The Open University, 2008</li>
-        <li><strong>Bachelor of Health Sciences</strong> · University of Adelaide, 1994</li>
-        <li><strong>BA, History, Politics and German</strong> · University of Adelaide, 1991</li>
+        <li><strong>BSc (Open), Maths &amp; Statistics</strong> · The Open University, 2008</li>
+        <li><strong>PhD, Environmental Science</strong> · University of Liverpool, 2006</li>
+        <li><strong>Also:</strong> MRes, Fish Biology (Distinction) · MA, Linguistics (Merit) · B Health Sc · BA, History, Politics and German</li>
       </ul>
     </section>
 
-    <section class="cv-section" aria-labelledby="skills-title">
+    <section class="cv-section" id="skills-section" aria-labelledby="skills-title">
       <h2 id="skills-title">Technical skills</h2>
       <div class="skills-list">
-        <p><strong>Platforms &amp; engineering:</strong> Azure, Databricks, Azure Data Factory, ETL pipelines, data warehousing, Azure DevOps and Jira.</p>
-        <p><strong>Programming &amp; analysis:</strong> Python, R, SQL, Excel, VBA, Power Query, DAX, SAS, Stata and SPSS.</p>
-        <p><strong>Visualisation:</strong> Power BI, Databricks AI/BI, matplotlib, Seaborn, Plotly, Dash, Bokeh, Altair and ggplot.</p>
-        <p><strong>Methods:</strong> Regression, propensity score matching, difference-in-differences, time series, survival analysis and machine learning.</p>
-        <p><strong>Data sourcing:</strong> Web scraping, REST APIs, relational databases and cloud storage.</p>
+        <p><strong>Data platforms &amp; engineering:</strong> Azure, Databricks, Azure Data Factory, ETL pipelines, automation, data warehousing, Medallion architecture, Unity Catalog, Azure DevOps, GitHub Actions and Jira.</p>
+        <p><strong>Data sourcing:</strong> Web scraping, REST APIs, SQL databases and cloud storage (Google Cloud Storage, AWS S3).</p>
+        <p><strong>Programming &amp; reporting:</strong> Python, R, SQL, Quarto, Excel, VBA, Power Query (M), DAX, SAS, Stata and SPSS.</p>
+        <p><strong>Visualisation:</strong> Python’s Matplotlib, Seaborn, Plotly, Dash, Bokeh, Altair, Geoplotlib and R’s ggplot. Dashboards: Databricks AI/BI, Jupyter Notebook, Tableau, Power BI and bespoke Excel.</p>
+        <p><strong>Predictive analytics:</strong> Regression, propensity score matching, difference-in-differences, time series, survival analysis and machine learning (scikit-learn: logistic regression, decision trees, SVM, KNN).</p>
       </div>
     </section>
   </main>
