@@ -137,8 +137,10 @@
     .library-heading h2 { margin: 0; font-size: 25px; font-weight: 600; line-height: 1.2; letter-spacing: -.055em; }
     .library-heading > p { max-width: 330px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
     .report-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .report-card { --card-bg: var(--pale-green); --card-art: var(--art-default); --card-accent: var(--green); --card-copy: var(--card-copy-default); --card-tag: var(--tag-ink); --card-tag-border: var(--tag-border-default); --card-ring: var(--art-ring); display: flex; min-height: 330px; flex-direction: column; overflow: hidden; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); color: var(--ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+    .report-card { --card-bg: var(--pale-green); --card-art: var(--art-default); --card-accent: var(--green); --card-copy: var(--card-copy-default); --card-tag: var(--tag-ink); --card-tag-border: var(--tag-border-default); --card-ring: var(--art-ring); position: relative; display: flex; min-height: 330px; flex-direction: column; overflow: hidden; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); color: var(--ink); transition: transform .2s ease, box-shadow .2s ease; }
     .report-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px var(--card-shadow); }
+    .card-link { position: absolute; z-index: 1; inset: 0; border-radius: inherit; }
+    .report-card:focus-within { outline: 3px solid var(--pink); outline-offset: 3px; }
     .report-main { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: clamp(24px, 3vw, 32px); }
     .featured-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--card-accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .report-title { margin: 0 0 11px; font-size: clamp(25px, 3vw, 32px); font-weight: 600; line-height: 1.15; letter-spacing: -.06em; }
@@ -157,6 +159,8 @@
     .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--art-label); font-size: 11px; font-weight: 600; }
     .card-arrow { display: inline-block; font-size: 18px; transition: transform .2s ease; }
     .report-card:hover .card-arrow { transform: translate(3px, -3px); }
+    .full-report-link { position: absolute; z-index: 2; right: 25px; bottom: 17px; color: var(--art-label); font-size: 11px; font-weight: 700; text-underline-offset: 3px; }
+    .full-report-link:hover { color: #ffffff; }
 
     .predictive { --card-bg: var(--predictive-bg); --card-art: var(--predictive-art); --card-accent: var(--predictive-accent); --card-copy: var(--predictive-copy); --card-tag: var(--predictive-tag); --card-tag-border: var(--predictive-tag-border); --card-ring: var(--predictive-ring); }
     .predictive .report-art::before { width: 200px; height: 200px; top: -20px; right: -52px; }
@@ -481,7 +485,8 @@
       </div>
 
       <div class="report-grid">
-        <a class="report-card uk-asylum" data-published="2026-11-18" data-updated="2026-11-18" href="https://aloysius109.github.io/uk-asylum/" aria-label="Read UK asylum, in detail">
+        <article class="report-card uk-asylum" data-published="2026-11-18" data-updated="2026-11-18" data-report-url="https://aloysius109.github.io/uk-asylum/">
+          <a class="card-link" href="https://aloysius109.github.io/uk-asylum/summary/" aria-label="Quick read: UK asylum, in detail"></a>
           <div class="report-main">
             <span class="featured-label" data-default-label="UK asylum report"><span aria-hidden="true">◆</span><span class="report-label-text">UK asylum report</span></span>
             <h3 class="report-title">UK asylum, in detail</h3>
@@ -500,10 +505,12 @@
               <p class="art-number">38.1%</p>
               <p class="art-caption">published initial grant rate for main applicants.</p>
             </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+            <div class="art-footer"><span>Quick read ↗</span></div>
           </div>
-        </a>
-        <a class="report-card spacex" data-published="2026-11-13" data-updated="2026-11-13" href="https://aloysius109.github.io/data-science-projects/spacex/" aria-label="Read the SpaceX Falcon 9 landing prediction report">
+          <a class="full-report-link" href="https://aloysius109.github.io/uk-asylum/">Full report ↗</a>
+        </article>
+        <article class="report-card spacex" data-published="2026-11-13" data-updated="2026-11-13" data-report-url="https://aloysius109.github.io/data-science-projects/spacex/">
+          <a class="card-link" href="https://aloysius109.github.io/data-science-projects/spacex/summary/" aria-label="Quick read: SpaceX Falcon 9 landing prediction"></a>
           <div class="report-main">
             <span class="featured-label" data-default-label="Machine learning report"><span aria-hidden="true">◆</span><span class="report-label-text">Machine learning report</span></span>
             <h3 class="report-title">SpaceX Falcon 9 landing prediction</h3>
@@ -522,10 +529,12 @@
               <p class="art-number">83.3% accuracy</p>
               <p class="art-caption">shared holdout score across four models on 18 test launches.</p>
             </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+            <div class="art-footer"><span>Quick read ↗</span></div>
           </div>
-        </a>
-        <a class="report-card affordability" data-published="2026-11-13" data-updated="2026-11-13" href="https://aloysius109.github.io/housing-affordability-report/" aria-label="Read The affordability squeeze report">
+          <a class="full-report-link" href="https://aloysius109.github.io/data-science-projects/spacex/">Full report ↗</a>
+        </article>
+        <article class="report-card affordability" data-published="2026-11-13" data-updated="2026-11-13" data-report-url="https://aloysius109.github.io/housing-affordability-report/">
+          <a class="card-link" href="https://aloysius109.github.io/housing-affordability-report/summary/" aria-label="Quick read: The affordability squeeze"></a>
           <div class="report-main">
             <span class="featured-label" data-default-label="Housing affordability"><span aria-hidden="true">&#9670;</span><span class="report-label-text">Housing affordability</span></span>
             <h3 class="report-title">The affordability squeeze</h3>
@@ -544,10 +553,12 @@
               <p class="art-number">294 / 317</p>
               <p class="art-caption">local authorities above the five-times-earnings indicator.</p>
             </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">&#8599;</span></div>
+            <div class="art-footer"><span>Quick read ↗</span></div>
           </div>
-        </a>
-        <a class="report-card ev-chargers" data-published="2026-11-13" data-updated="2026-11-13" href="https://aloysius109.github.io/ev-charger-report/" aria-label="Read Where the UK plugs in, the public EV charger report">
+          <a class="full-report-link" href="https://aloysius109.github.io/housing-affordability-report/">Full report ↗</a>
+        </article>
+        <article class="report-card ev-chargers" data-published="2026-11-13" data-updated="2026-11-13" data-report-url="https://aloysius109.github.io/ev-charger-report/">
+          <a class="card-link" href="https://aloysius109.github.io/ev-charger-report/summary/" aria-label="Quick read: Where the UK plugs in"></a>
           <div class="report-main">
             <span class="featured-label" data-default-label="EV charging report"><span aria-hidden="true">&#9670;</span><span class="report-label-text">EV charging report</span></span>
             <h3 class="report-title">Where the UK plugs in</h3>
@@ -566,10 +577,12 @@
               <p class="art-number">174.9 / 100k</p>
               <p class="art-caption">public EV chargers per 100,000 UK residents.</p>
             </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">&#8599;</span></div>
+            <div class="art-footer"><span>Quick read ↗</span></div>
           </div>
-        </a>
-        <a class="report-card predictive" data-published="2026-11-07" data-updated="2026-11-13" href="https://aloysius109.github.io/predictive-analytics/" aria-label="Explore Predictive Analytics asylum outcomes">
+          <a class="full-report-link" href="https://aloysius109.github.io/ev-charger-report/">Full report ↗</a>
+        </article>
+        <article class="report-card predictive" data-published="2026-11-07" data-updated="2026-11-13" data-report-url="https://aloysius109.github.io/predictive-analytics/">
+          <a class="card-link" href="https://aloysius109.github.io/predictive-analytics/summary/" aria-label="Quick read: Predictive Analytics"></a>
           <div class="report-main">
             <span class="featured-label" data-default-label="Interactive model"><span aria-hidden="true">◆</span><span class="report-label-text">Interactive model</span></span>
             <h3 class="report-title">Predictive Analytics</h3>
@@ -588,10 +601,12 @@
               <p class="art-number">Origin → asylum</p>
               <p class="art-caption">Compare modelled outcomes across countries and decision years.</p>
             </div>
-            <div class="art-footer"><span>Open the interactive model</span><span class="card-arrow">↗</span></div>
+            <div class="art-footer"><span>Quick read ↗</span></div>
           </div>
-        </a>
-        <a class="report-card sexual-violence" data-published="2026-11-06" data-updated="2026-11-06" href="https://aloysius109.github.io/sexual-violence-report/" aria-label="Read Sexual violence in perspective">
+          <a class="full-report-link" href="https://aloysius109.github.io/predictive-analytics/">Open the explorer ↗</a>
+        </article>
+        <article class="report-card sexual-violence" data-published="2026-11-06" data-updated="2026-11-06" data-report-url="https://aloysius109.github.io/sexual-violence-report/">
+          <a class="card-link" href="https://aloysius109.github.io/sexual-violence-report/summary/" aria-label="Quick read: Sexual violence in perspective"></a>
           <div class="report-main">
             <span class="featured-label" data-default-label="Evidence edition"><span aria-hidden="true">◆</span><span class="report-label-text">Evidence edition</span></span>
             <h3 class="report-title">Sexual violence in perspective</h3>
@@ -610,10 +625,12 @@
               <p class="art-number">138 countries</p>
               <p class="art-caption">with downloadable WHO estimates in this report.</p>
             </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+            <div class="art-footer"><span>Quick read ↗</span></div>
           </div>
-        </a>
-        <a class="report-card" data-published="2026-11-05" data-updated="2026-11-06" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
+          <a class="full-report-link" href="https://aloysius109.github.io/sexual-violence-report/">Full report ↗</a>
+        </article>
+        <article class="report-card" data-published="2026-11-05" data-updated="2026-11-06" data-report-url="https://aloysius109.github.io/asylum-tracker/asylum/">
+          <a class="card-link" href="https://aloysius109.github.io/asylum-tracker/asylum/summary/" aria-label="Quick read: Asylum in perspective"></a>
           <div class="report-main">
             <span class="featured-label" data-default-label="Featured report"><span aria-hidden="true">◆</span><span class="report-label-text">Featured report</span></span>
             <h3 class="report-title">Asylum in perspective</h3>
@@ -632,9 +649,10 @@
               <p class="art-number">9.0m</p>
               <p class="art-caption">people in the observed global asylum-seeker stock at year end.</p>
             </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+            <div class="art-footer"><span>Quick read ↗</span></div>
           </div>
-        </a>
+          <a class="full-report-link" href="https://aloysius109.github.io/asylum-tracker/asylum/">Full report ↗</a>
+        </article>
       </div>
     </section>
 

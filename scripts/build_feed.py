@@ -44,10 +44,11 @@ class ReportCardsParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
         classes = set(attributes.get("class", "").split())
-        if self.current is None and tag == "a" and "report-card" in classes:
+        if self.current is None and tag in {"a", "article"} and "report-card" in classes:
             self.current = {
                 "attrs": attributes,
                 "label": attributes.get("aria-label", ""),
+                "card_tag": tag,
                 "title": [],
                 "summary": [],
                 "tags": [],
@@ -77,7 +78,7 @@ class ReportCardsParser(HTMLParser):
                     self.current["tags"].append(text)
             else:
                 self.current[field].append(text)
-        if tag == "a":
+        if tag == self.current["card_tag"]:
             self._finish_card()
 
     def close(self):
@@ -92,7 +93,7 @@ class ReportCardsParser(HTMLParser):
         label = record["label"] or f"card {len(self.cards) + 1}"
         attrs = record["attrs"]
         required = {
-            "href": attrs.get("href"),
+            "data-report-url or href": attrs.get("data-report-url") or attrs.get("href"),
             "data-published": attrs.get("data-published"),
             "data-updated": attrs.get("data-updated"),
             ".report-title": " ".join(record["title"]),
@@ -102,7 +103,7 @@ class ReportCardsParser(HTMLParser):
         if missing:
             raise ValueError(f"Report {label} is missing required fields: {', '.join(missing)}")
 
-        url = attrs["href"].strip()
+        url = (attrs.get("data-report-url") or attrs.get("href")).strip()
         parsed_url = urlsplit(url)
         if parsed_url.scheme != "https" or not parsed_url.netloc:
             raise ValueError(f"Report {label} must have an absolute HTTPS URL: {url}")
@@ -133,7 +134,7 @@ def parse_cards(html: str) -> list[ReportCard]:
     parser.feed(html)
     parser.close()
     if not parser.cards:
-        raise ValueError("No .report-card anchors with publication dates were found")
+        raise ValueError("No .report-card elements with publication dates were found")
     urls = [card.url for card in parser.cards]
     if len(urls) != len(set(urls)):
         raise ValueError("Report card URLs must be unique")
@@ -345,11 +346,12 @@ def check_outputs(cards: list[ReportCard]) -> None:
 
 
 def check_drift(cards: list[ReportCard]) -> None:
-    scratch_card = """<a class="report-card" data-published="2026-11-14" data-updated="2026-11-14" href="https://aloysius109.github.io/scratch-report/">
+    scratch_card = """<article class="report-card" data-published="2026-11-14" data-updated="2026-11-14" data-report-url="https://aloysius109.github.io/scratch-report/">
+      <a class="card-link" href="https://aloysius109.github.io/scratch-report/summary/" aria-label="Quick read: Scratch report"></a>
       <h3 class="report-title">Scratch report</h3>
       <p class="report-description">A temporary parser check.</p>
       <span class="tag">Test</span>
-    </a>"""
+    </article>"""
     scratch_cards = parse_cards(INDEX.read_text(encoding="utf-8") + scratch_card)
     if len(scratch_cards) != len(cards) + 1 or scratch_cards[-1].title != "Scratch report":
         raise ValueError("Drift self-check did not discover a scratch report card")
