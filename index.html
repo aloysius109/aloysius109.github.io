@@ -140,21 +140,21 @@
     .report-card { --card-bg: var(--pale-green); --card-art: var(--art-default); --card-accent: var(--green); --card-copy: var(--card-copy-default); --card-tag: var(--tag-ink); --card-tag-border: var(--tag-border-default); --card-ring: var(--art-ring); display: flex; min-height: 330px; flex-direction: column; overflow: hidden; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); color: var(--ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
     .report-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px var(--card-shadow); }
     .report-main { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: clamp(24px, 3vw, 32px); }
-    .featured-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--card-accent); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .featured-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--card-accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .report-title { margin: 0 0 11px; font-size: clamp(25px, 3vw, 32px); font-weight: 600; line-height: 1.15; letter-spacing: -.06em; }
-    .report-description { max-width: 540px; margin-bottom: 21px; color: var(--card-copy); font-size: 12px; line-height: 1.75; }
-    .report-dates { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: -10px 0 17px; color: var(--muted); font-size: 9px; line-height: 1.5; }
+    .report-description { max-width: 540px; margin-bottom: 21px; color: var(--card-copy); font-size: 14px; line-height: 1.75; }
+    .report-dates { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: -10px 0 17px; color: var(--muted); font-size: 11px; line-height: 1.5; }
     .report-dates time { color: var(--ink); font-weight: 700; }
     .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
-    .tag { padding: 5px 8px; border: 1px solid var(--card-tag-border); border-radius: 2px; color: var(--card-tag); font-size: 9px; }
+    .tag { padding: 5px 8px; border: 1px solid var(--card-tag-border); border-radius: 2px; color: var(--card-tag); font-size: 11px; }
     .report-art { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px; overflow: hidden; padding: 20px 25px; background-color: var(--card-art); background-image: linear-gradient(135deg, var(--art-glow), transparent 70%); isolation: isolate; color: var(--white); }
     .report-art::before, .report-art::after { position: absolute; z-index: -1; content: ""; border: 1px solid var(--card-ring); border-radius: 50%; }
     .report-art::before { width: 210px; height: 210px; top: 14px; right: -58px; }
     .report-art::after { width: 145px; height: 145px; top: 46px; right: -22px; }
-    .art-label { color: var(--art-label); font-size: 9px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .art-label { color: var(--art-label); font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
     .art-number { margin: 7px 0 0; font-size: 38px; font-weight: 500; line-height: 1.05; letter-spacing: -.07em; }
-    .art-caption { max-width: 230px; margin: 6px 0 0; color: var(--art-copy); font-size: 10px; line-height: 1.55; }
-    .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--art-label); font-size: 10px; font-weight: 600; }
+    .art-caption { max-width: 230px; margin: 6px 0 0; color: var(--art-copy); font-size: 11px; line-height: 1.55; }
+    .art-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--art-label); font-size: 11px; font-weight: 600; }
     .card-arrow { display: inline-block; font-size: 18px; transition: transform .2s ease; }
     .report-card:hover .card-arrow { transform: translate(3px, -3px); }
 
@@ -208,7 +208,7 @@
     .about-side .tag { padding: 6px 9px; font-size: 10px; }
     .about-note { margin: 18px 0 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
     footer { border-top: 1px solid var(--line); }
-    .footer-inner { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 10px; }
+    .footer-inner { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 12px; }
     .footer-inner p { margin: 0; }
     .footer-inner a { text-underline-offset: 3px; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
@@ -350,44 +350,14 @@
               "position": 2,
               "item": {
                 "@type": "CreativeWork",
-                "name": "Asylum in perspective",
-                "description": "A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can tell us.",
-                "url": "https://aloysius109.github.io/asylum-tracker/asylum/"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@type": "CreativeWork",
-                "name": "Predictive Analytics",
-                "description": "Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion using historical UNHCR data.",
-                "url": "https://aloysius109.github.io/predictive-analytics/"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "item": {
-                "@type": "CreativeWork",
-                "name": "Sexual violence in perspective",
-                "description": "Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.",
-                "url": "https://aloysius109.github.io/sexual-violence-report/"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "item": {
-                "@type": "CreativeWork",
                 "name": "SpaceX Falcon 9 landing prediction",
-                "description": "Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches.",
+                "description": "Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches. IBM Applied Data Science Capstone coursework, not original analysis.",
                 "url": "https://aloysius109.github.io/data-science-projects/spacex/"
               }
             },
             {
               "@type": "ListItem",
-              "position": 6,
+              "position": 3,
               "item": {
                 "@type": "CreativeWork",
                 "name": "The affordability squeeze",
@@ -397,12 +367,42 @@
             },
             {
               "@type": "ListItem",
-              "position": 7,
+              "position": 4,
               "item": {
                 "@type": "CreativeWork",
                 "name": "Where the UK plugs in",
                 "description": "Explore how public EV charger provision varies by region, power and local authority, using the latest Department for Transport data.",
                 "url": "https://aloysius109.github.io/ev-charger-report/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Predictive Analytics",
+                "description": "Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion using historical UNHCR data.",
+                "url": "https://aloysius109.github.io/predictive-analytics/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Sexual violence in perspective",
+                "description": "Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.",
+                "url": "https://aloysius109.github.io/sexual-violence-report/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Asylum in perspective",
+                "description": "A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can tell us.",
+                "url": "https://aloysius109.github.io/asylum-tracker/asylum/"
               }
             }
           ]
@@ -503,79 +503,11 @@
             <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
           </div>
         </a>
-        <a class="report-card" data-published="2026-11-05" data-updated="2026-11-06" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
-          <div class="report-main">
-            <span class="featured-label" data-default-label="Featured report"><span aria-hidden="true">◆</span><span class="report-label-text">Featured report</span></span>
-            <h3 class="report-title">Asylum in perspective</h3>
-            <p class="report-description">A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can tell us.</p>
-            <p class="report-dates"><span>Published <time datetime="2026-11-05">5 Nov 2026</time></span><span>Updated <time datetime="2026-11-06">6 Nov 2026</time></span></p>
-            <span class="tags" aria-label="Report topics">
-              <span class="tag">Global analysis</span>
-              <span class="tag">Country comparisons</span>
-              <span class="tag">UNHCR data</span>
-              <span class="tag">2000–2025 edition</span>
-            </span>
-          </div>
-          <div class="report-art" aria-hidden="true">
-            <div>
-              <span class="art-label">Latest edition · 2025</span>
-              <p class="art-number">9.0m</p>
-              <p class="art-caption">people in the observed global asylum-seeker stock at year end.</p>
-            </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
-          </div>
-        </a>
-
-        <a class="report-card predictive" data-published="2026-11-07" data-updated="2026-11-13" href="https://aloysius109.github.io/predictive-analytics/" aria-label="Explore Predictive Analytics asylum outcomes">
-          <div class="report-main">
-            <span class="featured-label" data-default-label="Interactive model"><span aria-hidden="true">◆</span><span class="report-label-text">Interactive model</span></span>
-            <h3 class="report-title">Predictive Analytics</h3>
-            <p class="report-description">Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion using historical UNHCR data.</p>
-            <p class="report-dates"><span>Published <time datetime="2026-11-07">7 Nov 2026</time></span><span>Updated <time datetime="2026-11-13">13 Nov 2026</time></span></p>
-            <span class="tags" aria-label="Report topics">
-              <span class="tag">Interactive</span>
-              <span class="tag">Decision outcomes</span>
-              <span class="tag">Scenario explorer</span>
-              <span class="tag">UNHCR data</span>
-            </span>
-          </div>
-          <div class="report-art" aria-hidden="true">
-            <div>
-              <span class="art-label">Choose a route · Explore outcomes</span>
-              <p class="art-number">Origin → asylum</p>
-              <p class="art-caption">Compare modelled outcomes across countries and decision years.</p>
-            </div>
-            <div class="art-footer"><span>Open the interactive model</span><span class="card-arrow">↗</span></div>
-          </div>
-        </a>
-
-        <a class="report-card sexual-violence" data-published="2026-11-06" data-updated="2026-11-06" href="https://aloysius109.github.io/sexual-violence-report/" aria-label="Read Sexual violence in perspective">
-          <div class="report-main">
-            <span class="featured-label" data-default-label="Evidence edition"><span aria-hidden="true">◆</span><span class="report-label-text">Evidence edition</span></span>
-            <h3 class="report-title">Sexual violence in perspective</h3>
-            <p class="report-description">Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.</p>
-            <p class="report-dates"><span>Published <time datetime="2026-11-06">6 Nov 2026</time></span><span>Updated <time datetime="2026-11-06">6 Nov 2026</time></span></p>
-            <span class="tags" aria-label="Report topics">
-              <span class="tag">Worldwide evidence</span>
-              <span class="tag">UK detail</span>
-              <span class="tag">Power &amp; prevalence</span>
-              <span class="tag">Methods &amp; sources</span>
-            </span>
-          </div>
-          <div class="report-art" aria-hidden="true">
-            <div>
-              <span class="art-label">Evidence snapshot · Nov 2026</span>
-              <p class="art-number">138 countries</p>
-              <p class="art-caption">with downloadable WHO estimates in this report.</p>
-            </div>
-            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
-          </div>
-        </a>
         <a class="report-card spacex" data-published="2026-11-13" data-updated="2026-11-13" href="https://aloysius109.github.io/data-science-projects/spacex/" aria-label="Read the SpaceX Falcon 9 landing prediction report">
           <div class="report-main">
             <span class="featured-label" data-default-label="Machine learning report"><span aria-hidden="true">◆</span><span class="report-label-text">Machine learning report</span></span>
             <h3 class="report-title">SpaceX Falcon 9 landing prediction</h3>
-            <p class="report-description">Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches.</p>
+            <p class="report-description">Can launch data help predict first-stage recovery? Explore landing trends, launch-site patterns and four tuned classifiers across 90 Falcon 9 launches. IBM Applied Data Science Capstone coursework, not original analysis.</p>
             <p class="report-dates"><span>Published <time datetime="2026-11-13">13 Nov 2026</time></span><span>Updated <time datetime="2026-11-13">13 Nov 2026</time></span></p>
             <span class="tags" aria-label="Report topics">
               <span class="tag">90 launches</span>
@@ -637,12 +569,78 @@
             <div class="art-footer"><span>Read the report</span><span class="card-arrow">&#8599;</span></div>
           </div>
         </a>
+        <a class="report-card predictive" data-published="2026-11-07" data-updated="2026-11-13" href="https://aloysius109.github.io/predictive-analytics/" aria-label="Explore Predictive Analytics asylum outcomes">
+          <div class="report-main">
+            <span class="featured-label" data-default-label="Interactive model"><span aria-hidden="true">◆</span><span class="report-label-text">Interactive model</span></span>
+            <h3 class="report-title">Predictive Analytics</h3>
+            <p class="report-description">Explore modelled probabilities for asylum decision outcomes by origin, country of asylum and year. An interactive companion using historical UNHCR data.</p>
+            <p class="report-dates"><span>Published <time datetime="2026-11-07">7 Nov 2026</time></span><span>Updated <time datetime="2026-11-13">13 Nov 2026</time></span></p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">Interactive</span>
+              <span class="tag">Decision outcomes</span>
+              <span class="tag">Scenario explorer</span>
+              <span class="tag">UNHCR data</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Choose a route · Explore outcomes</span>
+              <p class="art-number">Origin → asylum</p>
+              <p class="art-caption">Compare modelled outcomes across countries and decision years.</p>
+            </div>
+            <div class="art-footer"><span>Open the interactive model</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
+        <a class="report-card sexual-violence" data-published="2026-11-06" data-updated="2026-11-06" href="https://aloysius109.github.io/sexual-violence-report/" aria-label="Read Sexual violence in perspective">
+          <div class="report-main">
+            <span class="featured-label" data-default-label="Evidence edition"><span aria-hidden="true">◆</span><span class="report-label-text">Evidence edition</span></span>
+            <h3 class="report-title">Sexual violence in perspective</h3>
+            <p class="report-description">Worldwide evidence, a detailed UK view, and the differences behind the rates—using WHO, UNICEF and UK survey data to compare what the figures actually measure.</p>
+            <p class="report-dates"><span>Published <time datetime="2026-11-06">6 Nov 2026</time></span><span>Updated <time datetime="2026-11-06">6 Nov 2026</time></span></p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">Worldwide evidence</span>
+              <span class="tag">UK detail</span>
+              <span class="tag">Power &amp; prevalence</span>
+              <span class="tag">Methods &amp; sources</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Evidence snapshot · Nov 2026</span>
+              <p class="art-number">138 countries</p>
+              <p class="art-caption">with downloadable WHO estimates in this report.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
+        <a class="report-card" data-published="2026-11-05" data-updated="2026-11-06" href="https://aloysius109.github.io/asylum-tracker/asylum/" aria-label="Read Asylum in perspective">
+          <div class="report-main">
+            <span class="featured-label" data-default-label="Featured report"><span aria-hidden="true">◆</span><span class="report-label-text">Featured report</span></span>
+            <h3 class="report-title">Asylum in perspective</h3>
+            <p class="report-description">A global look at asylum applications, decisions and unresolved caseloads—with country comparisons, interactive exploration and clear notes on what the data can tell us.</p>
+            <p class="report-dates"><span>Published <time datetime="2026-11-05">5 Nov 2026</time></span><span>Updated <time datetime="2026-11-06">6 Nov 2026</time></span></p>
+            <span class="tags" aria-label="Report topics">
+              <span class="tag">Global analysis</span>
+              <span class="tag">Country comparisons</span>
+              <span class="tag">UNHCR data</span>
+              <span class="tag">2000–2025 edition</span>
+            </span>
+          </div>
+          <div class="report-art" aria-hidden="true">
+            <div>
+              <span class="art-label">Latest edition · 2025</span>
+              <p class="art-number">9.0m</p>
+              <p class="art-caption">people in the observed global asylum-seeker stock at year end.</p>
+            </div>
+            <div class="art-footer"><span>Read the report</span><span class="card-arrow">↗</span></div>
+          </div>
+        </a>
       </div>
     </section>
 
     <aside class="shell more" aria-labelledby="more-title">
       <h2 id="more-title">A living library.</h2>
-      <p>Reports are added as they are ready to share. To pin another publication, duplicate a report card in this page’s <a href="https://github.com/aloysius109/aloysius109.github.io/blob/main/index.html">source</a>.</p>
+      <p>New reports are added as they’re ready to share.</p>
     </aside>
   </main>
 
