@@ -48,7 +48,7 @@ def render_pdf(fitz, source, destination, title):
 def pdf_source(source):
     source = re.sub(r'<header class="shell cv-header">.*?</header>', "", source, flags=re.DOTALL)
     source = re.sub(r'<footer class="cv-footer">.*?</footer>', "", source, flags=re.DOTALL)
-    source = source.replace("</head>", "<style>h1 { font-size: 40px; }</style></head>", 1)
+    source = source.replace("</head>", "<style>h1 { font-size: 40px; } .strapline { font-size: 13px; white-space: nowrap; }</style></head>", 1)
     return source
 
 
